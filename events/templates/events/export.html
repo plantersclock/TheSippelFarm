@@ -1,0 +1,136 @@
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/events/event.css">
+  <script src="https://kit.fontawesome.com/86ee3b03e5.js"></script>
+  <style type="text/css">
+    body { margin:5%; }
+    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+</head>
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          {% load bootstrap4 %}
+          {% bootstrap_css %}
+          {% bootstrap_javascript jquery='full' %}
+  <a class="navbar-brand" href="/mdg/home">Master Data Governance</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      {% comment %} <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{user}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {% if user.is_authenticated %}
+          <a class="dropdown-item" href="{% url 'logout' %}"> logout</a>
+          {% else %}
+          <a class="dropdown-item" href="{% url 'login' %}">login</a>
+          {% endif %}
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> {% endcomment %}
+    </ul>
+    <ul class="navbar-nav">
+    {% if user.is_authenticated %}
+     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{user}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'logout' %}"> logout</a>
+        </div>
+    </li>
+    {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">login</a>
+      </li>
+
+    {% endif %}
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+<body>
+  {% if user.is_authenticated %}
+    <link rel="stylesheet" type="text/css" href="/static/events/event.css">
+      <div class="flex-container" style="height:auto;">
+        <div class="column">
+          <div class="container-item-header">
+            <div class="column-item-header" style="color:white;">
+
+              <h3>{{title}}</h3>
+        </div></div></div></div>
+
+
+
+
+
+  <div style="padding-left:20%; padding-right:20%; padding-top:3rem;">
+  <form method="post">
+{% comment %}
+    <div class="form-group">
+      <label for="ControlInput1">From Date</label>
+      <input class="form-control" name="from_date" id="ControlInput1" placeholder="date">
+    </div>
+    <div class="form-group">
+      <label for="ControlInput2">To Date</label>
+      <input class="form-control" name="tod_date" id="ControlInput2" placeholder="date">
+    </div>
+    <div class="form-group">
+      <label for="ControlSelect1">Example multiple select</label>
+      <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div> {% endcomment %}
+    {{ form.media }}
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% if concepts %}
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Brand Cat #</th>
+      <th scope="col">Brand Name</th>
+      <th scope="col">Concept</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in concepts %}
+    <tr>
+      <td>{{row.0}}</td>
+      <td>{{row.1}}</td>
+      <td>{{row.2}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{%endif%}
+
+{% else %}
+    <p style="padding-left: 10%; padding-top: 3rem;">You are not logged in</p>
+    <p style="padding-left: 10%;"><a href="{% url 'login' %}">login</a></p>
+    <link rel="stylesheet" type="text/css" href="/static/travel/travel.css">
+{% endif %}
+  </div>
+</body>
