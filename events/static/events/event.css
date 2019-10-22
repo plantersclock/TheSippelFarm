@@ -24,8 +24,7 @@
         #417066,
         #417066 100px,
         white 100px,
-        white 53%,
-    rgba(255, 255, 255, 0) 53%
+        white 100%
     );
 }
 
@@ -48,5 +47,6 @@
 .event-details{
     padding: 20px;
 }
+
 
 

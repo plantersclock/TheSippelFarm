@@ -3,8 +3,6 @@ from .models import  MixPanel, Event, Professional, EventUser
 
 # Register your models here.
 
-
-admin.site.register(MixPanel)
 admin.site.register(Event)
 admin.site.register(Professional)
 admin.site.register(EventUser)
