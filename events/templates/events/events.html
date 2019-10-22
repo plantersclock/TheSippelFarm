@@ -11,7 +11,7 @@
         {% for event in events.events %}
         <div class="event-card-background">
             <div class="flex-container">
-                <div class="horse"><p style="text-align: center; padding-top: 10px; color:white; font-size: 28px">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}<p></div>
+                <div class="horse"><p style="width: 100px; text-align: center; padding-top: 10%; color:white; font-size: 28px">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}</p></div>
                 <div class="event-details">
                     <h3>{{event.name}}</h3>
                     <p>Pro: {{event.professional}} <br>Date: {{event.start_date}}</p>

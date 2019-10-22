@@ -17,6 +17,7 @@ class MixPanel(models.Model):
 
 class Professional(models.Model):
     name = models.CharField(max_length=100)
+    short_description = models.CharField(max_length=256, null=True, default=None, blank=True)
     website = models.CharField(max_length=1000, null=True, default=None, blank=True)
 
     def __str__(self):

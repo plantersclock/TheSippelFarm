@@ -59,7 +59,7 @@ class EventsView(generic.ListView):
 
     def get_queryset(self):
         context = {
-            "events": Event.objects.filter(published = True),
+            "events": Event.objects.filter(published = True).order_by('start_date'),
         }
         print(context)
         return context
