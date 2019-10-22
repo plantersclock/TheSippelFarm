@@ -27,7 +27,7 @@ SECRET_KEY = ')(pc(p62)!#p+vhzgzd*0u50u_n#6+0)cvmio=o^uy=1a6e4!6'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['https://mdg-app.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['https://the-sippel-farm.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -142,12 +142,12 @@ LOGOUT_REDIRECT_URL = '/mdg/home'
 
 
 # Turn on for Prod!!!!!!!
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
-# django_heroku.settings(locals())
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+django_heroku.settings(locals())
 
-DEBUG = True
+DEBUG = False
 
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),
