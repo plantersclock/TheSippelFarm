@@ -8,13 +8,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class MixPanel(models.Model):
-    date = models.CharField(max_length=200)
-    content = models.TextField()
-
-    def __str__(self):
-        return "Mixpanel date={}".format(self.date)
-
 class Professional(models.Model):
     name = models.CharField(max_length=100)
     short_description = models.CharField(max_length=256, null=True, default=None, blank=True)
@@ -41,6 +34,9 @@ class EventUser(models.Model):
     rider = models.CharField("Rider's Name", max_length=128)
     horse = models.CharField("Horse's Name", max_length=128)
     notes = models.TextField('Scheduling Notes', null=True, default=None, blank=True)
+
+    class Meta:
+        unique_together = ('event', 'email', 'rider', 'horse')
 
     def __str__(self):
         return "{}: {}-{}".format(self.event.name, self.rider, self.horse)

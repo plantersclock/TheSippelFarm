@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  MixPanel, Event, Professional, EventUser
+from .models import  Event, Professional, EventUser
 
 # Register your models here.
 
