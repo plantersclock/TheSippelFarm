@@ -27,7 +27,7 @@ SECRET_KEY = ')(pc(p62)!#p+vhzgzd*0u50u_n#6+0)cvmio=o^uy=1a6e4!6'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['https://the-sippel-farm.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['https://thesippelfarm.herokuapp.com', 'localhost']
 
 
 # Application definition
