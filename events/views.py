@@ -20,7 +20,8 @@ import uuid
 
 
 from .models import (
-    MixPanel
+    MixPanel,
+    Event
 )
 from .forms import (
     ExportForm,
@@ -51,21 +52,18 @@ class AboutView(generic.ListView):
         return "hi"
 
 
-class HomeView(generic.ListView):
-    model = MixPanel
-    template_name = "events/user_home.html"
-    context_object_name = "mixpanel"
+class EventsView(generic.ListView):
+    model = Event
+    template_name = "events/events.html"
+    context_object_name = "events"
 
     def get_queryset(self):
+        context = {
+            "events": Event.objects.all(),
+        }
+        print(context)
+        return context
 
-        return "hi"
-        # mixpanel = MixPanel()
-        # mixpanel.date = '2019-08-18'
-        # mixpanel.content = update_mixpanel('2019-08-18', '2019-08-18')
-        # mixpanel.time = 1234567890
-        # mixpanel.save()
-        # print("did it")
-        # return MixPanel.objects.all()
 
 def export_mixpanel(request):
     # if this is a POST request we need to process the form data
@@ -202,7 +200,7 @@ INSERT INTO [RetailBrands].[Brand]
         )
 
 SELECT  SCOPE_IDENTITY() [BrandIDReturn];""".format(cd['brand_type'], name, cd['brand_cat'], cd['concept'])
-        
+
         response = HttpResponse(content, content_type='text/plain')
         response['Content-Disposition'] = 'attachment; filename={}'.format(cd['name'] + ".sql")
         return response

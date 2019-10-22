@@ -1,0 +1,26 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/events/event.css">
+
+    <div class="header-background">
+    <h1 style="text-align: center; color: white; font-size: 80px; padding-top:0px; font-family: 'Abril Fatface', cursive; font-weight: 300;"> Events</h1>
+    </div>
+    <div style= "width: 100%">
+        {% for event in events.events %}
+        <div class="event-card-background">
+            <div class="flex-container">
+                <div class="horse"><p style="text-align: center; padding-top: 10px; color:white; font-size: 28px">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}<p></div>
+                <div class="event-details">
+                    <h3>{{event.name}}</h3>
+                    <p>Trainer: {{event.professional}} <br>Date: {{event.start_date}}</p>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
