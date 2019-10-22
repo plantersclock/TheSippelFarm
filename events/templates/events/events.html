@@ -9,7 +9,7 @@
     </div>
     <div style= "width: 100%">
         {% for event in events.events %}
-        <div class="event-card-background">
+        <div {% if event.start_date|date:"M" == "Jan" or event.start_date|date:"M" == "May" or event.start_date|date:"M" == "Sep" %} class="event-card-1-background" {%elif event.start_date|date:"M" == "Feb" or event.start_date|date:"M" == "Jun" or event.start_date|date:"M" == "Oct" %} class="event-card-2-background" {%elif event.start_date|date:"M" == "Mar" or event.start_date|date:"M" == "Jul" or event.start_date|date:"M" == "Nov" %} class="event-card-3-background" {% else %} class="event-card-4-background" {%endif%}>
             <div class="flex-container">
                 <div class="horse"><p style="width: 100px; text-align: center; padding-top: 10%; color:white; font-size: 28px">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}</p></div>
                 <div class="event-details">

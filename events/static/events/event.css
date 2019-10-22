@@ -1,3 +1,13 @@
+:root {
+    --main-base-color: #192D2e;
+    --secondary-base-color: #617f7f;
+    --main-accent-color: #c97f04;
+    --secondary-accent-color: #efd9a7;
+    --card-color-1: #417066;
+    --card-color-2: #8b4f00;
+    --card-color-3: #313b66;
+    --card-color-4: #502929;
+    }
 
 
 .header-background {
@@ -8,7 +18,7 @@
     background-size: 150px 100px;
 }
 
-.event-card-background {
+.event-card-1-background {
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 5px;
@@ -21,8 +31,68 @@
 
     background: linear-gradient(
         to right,
-        #417066,
-        #417066 100px,
+        var(--card-color-1),
+        var(--card-color-1) 100px,
+        white 100px,
+        white 100%
+    );
+}
+
+.event-card-2-background {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: auto;
+    -moz-box-shadow: 0 0 4px #ccc;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to right,
+        var(--card-color-2),
+        var(--card-color-2) 100px,
+        white 100px,
+        white 100%
+    );
+}
+
+.event-card-3-background {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: auto;
+    -moz-box-shadow: 0 0 4px #ccc;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to right,
+        var(--card-color-3),
+        var(--card-color-3) 100px,
+        white 100px,
+        white 100%
+    );
+}
+
+.event-card-4-background {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: auto;
+    -moz-box-shadow: 0 0 4px #ccc;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to right,
+        var(--card-color-4),
+        var(--card-color-4) 100px,
         white 100px,
         white 100%
     );
