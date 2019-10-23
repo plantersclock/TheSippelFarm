@@ -19,9 +19,7 @@ import pendulum
 import uuid
 
 
-from .models import (
-    Event
-)
+
 from .forms import (
     ExportForm,
     BrandSqlForm

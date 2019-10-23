@@ -20,10 +20,12 @@ import uuid
 
 
 from .models import (
-    Event
+    Event,
+    EventJoined
 )
 from .forms import (
-    EventSignUpForm
+    EventSignUpForm,
+    AttendeeScheduleForm
 )
 
 from django.core.mail import send_mail
@@ -87,3 +89,17 @@ def event_sign_up(request, pk):
         "form": form,
     }
     return render(request, "events/sign_up.html", context)
+
+def attendee_schedule(request, pk):
+    instance = get_object_or_404(EventJoined, event=pk)
+    print(instance)
+    form = EventSignUpForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/events")
+    context = {
+        "form": form,
+
+    }
+
+    return render(request, "events/scheduler.html", context)
