@@ -34,9 +34,6 @@ class EventJoined(models.Model):
     rider = models.CharField("Rider's Name", max_length=128)
     horse = models.CharField("Horse's Name", max_length=128)
     notes = models.TextField('Scheduling Notes', null=True, default=None, blank=True)
-    day = models.DateField('Scheduled Day', null=True, default=None, blank=True)
-    time = models.TimeField('Scheduled Time', null=True, default=None, blank=True)
-    duration = models.IntegerField ('Duration', null=True, default=None, blank=True)
 
     class Meta:
         unique_together = ('event', 'email', 'rider', 'horse')

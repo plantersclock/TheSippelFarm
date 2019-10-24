@@ -30,8 +30,7 @@
     {% endif %}
     <div style="margin-left: 20px;">
     {% for scheduled in scheduled_attendees %}
-        <p>{{scheduled.attendee.rider}}<br>
-           {{scheduled.attendee.horse}}<br>
+        <p>{{scheduled.attendee.rider}}: {{scheduled.attendee.horse}}<br>
         {{scheduled.day}} @ {{scheduled.time}} for {{scheduled.duration}} mins</p>
     {% endfor %}
     </div>
