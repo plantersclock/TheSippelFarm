@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect, Http404, HttpResponse
+from django.http import HttpResponseRedirect, Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
@@ -92,7 +92,6 @@ def event_sign_up(request, pk):
     return render(request, "events/sign_up.html", context)
 
 def attendee_schedule(request, pk):
-
     if request.method == "POST":
         form = AttendeeScheduleForm(request.POST)
 
@@ -115,7 +114,6 @@ def attendee_schedule(request, pk):
     else:
         form = AttendeeScheduleForm()
         form.fields['attendee'].queryset = EventJoined.objects.filter(event=pk)
-        form.fields['attendee'].empty_label = None
 
 
     context = {
@@ -123,3 +121,21 @@ def attendee_schedule(request, pk):
         "scheduled_attendees": ScheduledAttendee.objects.filter(attendee__event=pk).order_by('time')
     }
     return render(request, "events/scheduler.html", context)
+
+def attendee_defaults(request):
+    attendee = request.GET.get('attendee', None)
+    if ScheduledAttendee.objects.filter(attendee=attendee).exists():
+        data = {
+            'is_scheduled': ScheduledAttendee.objects.filter(attendee=attendee).exists(),
+            'date': ScheduledAttendee.objects.get(attendee=attendee).day,
+            'time': ScheduledAttendee.objects.get(attendee=attendee).time,
+            'duration': ScheduledAttendee.objects.get(attendee=attendee).duration,
+            'notes': EventJoined.objects.get(id=attendee).notes
+        }
+    else:
+        data = {
+            'is_scheduled': False,
+        }
+    
+
+    return JsonResponse(data)

@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
 
     {% if user.is_authenticated %}
-    <form method="post">
+    <form method="post" >
 
         {{ form.media }}
         {% csrf_token %}
@@ -13,8 +13,9 @@
 
 
         {{ form.attendee}}
+        <div name= "sched_note" id="sched_note" style = "margin: 20px;"></div>
         {{ form.day|default_if_none:"" }}
-        {{ form.time|default_if_none:"hi" }}
+        {{ form.time|default_if_none:"" }}
         {{ form.duration|default_if_none:"" }}
 
         <div style="margin-top:10px;">
@@ -35,5 +36,47 @@
     {% endfor %}
     </div>
 {% endblock %}
+
+{% block javascript %}
+  {% comment %} USEFUL SNIPPET OF JAVASCRIPT {% endcomment %}
+  {% comment %} <script>
+    $("#id_attendee").change(function () {
+      console.log( $(this).val() );
+    });
+  </script> {% endcomment %}
+
+  <script>
+    $("#id_attendee").change(function () {
+      var attendee = $(this).val();
+
+      $.ajax({
+        url: '/events/ajax/attendee_defaults/',
+        data: {
+          'attendee': attendee
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_scheduled) {
+            document.getElementById("sched_note").innerHTML=data.notes;
+            document.getElementById("id_day").value=data.date;
+            document.getElementById("id_time").value=data.time;
+            document.getElementById("id_duration").value=data.duration;
+          }
+          else {
+            document.getElementById("sched_note").innerHTML="";
+            document.getElementById("id_day").value="";
+            document.getElementById("id_time").value="";
+            document.getElementById("id_duration").value="";
+          }
+        }
+      });
+
+    });
+  </script>
+
+  {% endblock %}
+
+  
+
 
 
