@@ -8,6 +8,7 @@ from django.contrib.admin import widgets
 import datetime
 from .models import (
     EventJoined,
+    ScheduledAttendee
 )
 
 class EventSignUpForm(forms.ModelForm):
@@ -16,9 +17,14 @@ class EventSignUpForm(forms.ModelForm):
         fields = ["email", "rider", "horse", "notes"]
 
 class AttendeeScheduleForm(forms.ModelForm):
+    # pk = forms.ModelChoiceField(
+    #     queryset=EventJoined.objects.all(),
+    #     empty_label=None,
+    # )
+
     class Meta:
-        model = EventJoined
-        fields = ["day", "time", "duration"]
+        model = ScheduledAttendee
+        fields = ["attendee", "day", "time", "duration"]
         widgets = {"day": DatePickerInput(),
                     "time": TimePickerInput()
                 }

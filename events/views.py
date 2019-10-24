@@ -21,7 +21,8 @@ import uuid
 
 from .models import (
     Event,
-    EventJoined
+    EventJoined,
+    ScheduledAttendee
 )
 from .forms import (
     EventSignUpForm,
@@ -91,15 +92,32 @@ def event_sign_up(request, pk):
     return render(request, "events/sign_up.html", context)
 
 def attendee_schedule(request, pk):
-    instance = get_object_or_404(EventJoined, event=pk)
-    print(instance)
-    form = EventSignUpForm(request.POST or None, instance=instance)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("/events")
+
+    if request.method == "POST":
+        form = AttendeeScheduleForm(request.POST)
+
+        if ScheduledAttendee.objects.filter(attendee = form['attendee'].value()).exists():
+            scheduled_attendee = ScheduledAttendee.objects.get(attendee=form.data.get('attendee'))
+            form = AttendeeScheduleForm(request.POST or None, instance=scheduled_attendee)
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect("/events/{}/scheduler".format(pk))
+
+        else:
+            if form.is_valid():
+                new_scheduled = form.save(commit=False)
+                attendee = get_object_or_404(EventJoined, pk=form['attendee'].value())
+                new_scheduled.attendee = attendee
+                new_scheduled.save()
+                print("New Thing")
+                return HttpResponseRedirect("/events/{}/scheduler".format(pk))
+
+    else:
+        form = AttendeeScheduleForm()
+        form.fields['attendee'].queryset = EventJoined.objects.filter(event=pk)
+        form.fields['attendee'].empty_label = None
+
     context = {
         "form": form,
-
     }
-
     return render(request, "events/scheduler.html", context)
