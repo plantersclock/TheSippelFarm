@@ -48,7 +48,7 @@ class ScheduledAttendee(models.Model):
     attendee = models.OneToOneField(EventJoined, on_delete=models.CASCADE)
     day = models.DateField('Scheduled Day', null=True, default=None, blank=True)
     time = models.TimeField('Scheduled Time', null=True, default=None, blank=True)
-    duration = models.DurationField ('Duration', null=True, default=None, blank=True)
+    duration = models.IntegerField ('Duration', null=True, default=None, blank=True)
 
     def __str__(self):
         return "{}: {}-{}".format(self.attendee.rider, self.day, self.time)

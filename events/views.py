@@ -117,7 +117,9 @@ def attendee_schedule(request, pk):
         form.fields['attendee'].queryset = EventJoined.objects.filter(event=pk)
         form.fields['attendee'].empty_label = None
 
+
     context = {
         "form": form,
+        "scheduled_attendees": ScheduledAttendee.objects.filter(attendee__event=pk).order_by('time')
     }
     return render(request, "events/scheduler.html", context)

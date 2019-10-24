@@ -9,23 +9,31 @@
 
         {{ form.media }}
         {% csrf_token %}
-        <div style="margin-left: 20px; width: 500px">
+        <div style="margin-left: 20px; width: 250px">
 
 
         {{ form.attendee}}
         {{ form.day|default_if_none:"" }}
         {{ form.time|default_if_none:"hi" }}
         {{ form.duration|default_if_none:"" }}
+
+        <div style="margin-top:10px;">
+        <button type="submit" class="btn btn-success">Schedule</button>
+        </div>
         </div>
 
-    <button type="submit" class="btn btn-success">Sign-Up</button>
+
     </form>
     {% else %}
     <h3>Admin's Only</h3>
     {% endif %}
-
-
-
+    <div style="margin-left: 20px;">
+    {% for scheduled in scheduled_attendees %}
+        <p>{{scheduled.attendee.rider}}<br>
+           {{scheduled.attendee.horse}}<br>
+        {{scheduled.day}} @ {{scheduled.time}} for {{scheduled.duration}} mins</p>
+    {% endfor %}
+    </div>
 {% endblock %}
 
 
