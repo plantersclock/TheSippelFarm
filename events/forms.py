@@ -25,6 +25,6 @@ class AttendeeScheduleForm(forms.ModelForm):
     class Meta:
         model = ScheduledAttendee
         fields = ["attendee", "day", "time", "duration"]
-        widgets = {
+        widgets = { "day": DatePickerInput(attrs={"onfocus":"blur()"}) ,
                     "time": TimePickerInput()
                 }
