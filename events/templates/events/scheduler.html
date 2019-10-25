@@ -4,7 +4,7 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
 
-    {% if user.is_authenticated %}
+    {% comment %} {% if user.is_authenticated %} {% endcomment %}
 
     <form method="post" >
 
@@ -27,9 +27,9 @@
 
     </form>
     
-    {% else %}
+    {% comment %} {% else %}
     <h3>Admin's Only</h3>
-    {% endif %}
+    {% endif %} {% endcomment %}
     <div style="margin-left: 20px;">
     {% for scheduled in scheduled_attendees %}
         <p>{{scheduled.attendee.rider}}: {{scheduled.attendee.horse}}<br>
