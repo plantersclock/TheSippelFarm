@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
 
     {% if user.is_authenticated %}
+    
     <form method="post" >
 
         {{ form.media }}
@@ -25,6 +26,7 @@
 
 
     </form>
+    
     {% else %}
     <h3>Admin's Only</h3>
     {% endif %}
@@ -71,6 +73,7 @@
       });
 
     });
+
   </script>
 
   {% endblock %}

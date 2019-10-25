@@ -25,6 +25,6 @@ class AttendeeScheduleForm(forms.ModelForm):
     class Meta:
         model = ScheduledAttendee
         fields = ["attendee", "day", "time", "duration"]
-        widgets = {"day": DatePickerInput(),
+        widgets = {
                     "time": TimePickerInput()
                 }
