@@ -25,6 +25,8 @@ class AttendeeScheduleForm(forms.ModelForm):
     class Meta:
         model = ScheduledAttendee
         fields = ["attendee", "day", "time", "duration"]
-        widgets = { "day": DatePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly"}),
-                    "time": TimePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly"})
+        widgets = { "attendee": forms.Select(attrs={"class":"form-control"}),
+                    "day": DatePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"}),
+                    "time": TimePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"}),
+                    "duration": forms.NumberInput(attrs={"class":"form-control"})
                 }

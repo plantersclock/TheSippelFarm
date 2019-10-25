@@ -5,19 +5,19 @@
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
 
     {% if user.is_authenticated %}
-    
+
     <form method="post" >
 
         {{ form.media }}
         {% csrf_token %}
-        <div style="margin-left: 20px; width: 250px">
+        <div style="width: 300px; margin-left: 20px; margin-right: 20px;">
 
 
         {{ form.attendee}}
-        <div name= "sched_note" id="sched_note" style = "margin: 20px;"></div>
-        {{ form.day|default_if_none:"" }}
-        {{ form.time|default_if_none:"" }}
-        {{ form.duration|default_if_none:"" }}
+        <div name= "sched_note" id="sched_note" style = "margin-top: 10px;"></div>
+        <div style = "margin-top: 10px;">{{ form.day|default_if_none:"" }}</div>
+        <div style = "margin-top: 10px;">{{ form.time|default_if_none:"" }}</div>
+        <div style = "margin-top: 10px;">{{ form.duration|default_if_none:""}}</div>
 
         <div style="margin-top:10px;">
         <button type="submit" class="btn btn-success">Schedule</button>
@@ -58,7 +58,7 @@
         dataType: 'json',
         success: function (data) {
           if (data.is_scheduled) {
-            document.getElementById("sched_note").innerHTML=data.notes;
+            document.getElementById("sched_note").innerHTML="Scheduling Note: " + data.notes;
             document.getElementById("id_day").value=data.date;
             document.getElementById("id_time").value=data.time;
             document.getElementById("id_duration").value=data.duration;
