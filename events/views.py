@@ -30,6 +30,7 @@ from .forms import (
 )
 
 from django.core.mail import send_mail
+from django.conf import settings
 
 
 
@@ -45,6 +46,18 @@ class AboutView(generic.ListView):
 class EventsView(generic.ListView):
     model = Event
     template_name = "events/events.html"
+    context_object_name = "events"
+
+    def get_queryset(self):
+        context = {
+            "events": Event.objects.filter(published = True).order_by('start_date'),
+        }
+        print(context)
+        return context
+
+class LiveView(generic.ListView):
+    model = Event
+    template_name = "events/live.html"
     context_object_name = "events"
 
     def get_queryset(self):
@@ -71,7 +84,16 @@ def event_sign_up(request, pk):
             new_sign_up = form.save(commit=False)
             new_sign_up.event = event
             try:
+                print(new_sign_up.email)
                 new_sign_up.save()
+                print("this far")
+                subject = 'Thank you for registering to our site'
+                message = ' it  means a world to us '
+                email_from = settings.EMAIL_HOST_USER
+                print(settings.EMAIL_HOST_USER)
+                recipient_list = ['mattman861@gmail.com',]
+                print ("hi")
+                send_mail( subject, message, email_from, recipient_list )
                 return HttpResponseRedirect("/events")
             except:
                 context = {
@@ -136,6 +158,6 @@ def attendee_defaults(request):
         data = {
             'is_scheduled': False,
         }
-    
+
 
     return JsonResponse(data)
