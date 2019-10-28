@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+
+{% block content %}
+  {% load bootstrap4 %}
+
+
+  <h2 style = "padding-left:20%; padding-top:2rem;">Sign up</h2>
+  <div style = "padding-left:20%; padding-right:20%;">
+  <form method="post">
+    {% bootstrap_form form %}
+    {% csrf_token %}
+    {{ form.media }}
+    <button type="submit">Sign up</button>
+  </form>
+  </div>
+{% endblock %}

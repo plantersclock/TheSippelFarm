@@ -10,7 +10,6 @@ event_joined_resource = EventJoinedResource()
 
 app_name = 'events'
 urlpatterns = [
-    path('events', views.AboutView.as_view(), name='about_me'),
     path('live', views.LiveView.as_view(), name='live'),
     path('', views.EventsView.as_view(), name='events'),
     path('<int:pk>/sign_up', views.event_sign_up, name='sign_up'),

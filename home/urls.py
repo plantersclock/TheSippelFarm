@@ -5,6 +5,6 @@ from . import forms
 
 app_name = 'home'
 urlpatterns = [
-    path('home', views.HomeView.as_view(), name='user_home'),
-    path('', views.AboutView.as_view(), name='about_me'),
+    path('', views.HomeView.as_view(), name='user_home'),
+    path('signup/', views.SignUp.as_view(), name='signup'),
     ]
