@@ -1,5 +1,47 @@
 {% extends "home/base.html" %}
 
 {% block content %}
-    <h3><a href="/events" style="margin-left: 20px">Events</a></h3>
+
+    <div class="header-image">
+        <div>
+            <img src="/static/images/TSF_Logo.png" height="100vw" style="margin-left:10vw; "></img>
+        </div>
+    </div>
+    <div style="width:100%;">
+        <div style="text-align:center; margin-top:30px; margin-bottom: 30px;">
+            <h5 style="color:#417066;">Where no dream is too big<br> and no victory too small</h5>
+            <p>A private equine training facility<br>located on 12 beautiful rolling acres<br>in Annville, Pennsylvania.</p>
+        </div>
+        <div>
+            <img src="/static/images/farm.jpg" width="90%" style="margin-left:5%; border-radius: 10px;"></img>
+        </div>
+        <div style="margin-left:5%; margin-right:5%; margin-top: 30px;">
+            <h3>Sippel Farm Events</h3>
+            <p>Hosting upper level clinicians and equine wellness practicioners, as well as schooling shows throughout the year.</p>
+        </div>
+        <div class="flex-container" style="overflow-x: auto; margin-top: 30px;">
+            <div style="margin-left:5%;">
+                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px;"></img>
+            </div>
+            <div style="margin-left:5%;">
+                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px;"></img>
+            </div>
+            <div style="margin-left:5%;">
+                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px;"></img>
+            </div>
+            <div style="margin-left:5%;">
+                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px;"></img>
+            </div>
+            <div style="margin-left:5%;">
+                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px;"></img>
+            </div>
+        </div>
+        <div id="show-more-button" style="margin-top: 20px; padding:10px; cursor: pointer;" onclick="location.href='/events'"">
+            <p style="margin:0; text-align:center; color:#417066; font-weight:500;">Show all Events</p>
+
+        </div>
+
+    </div>
+
+
 {% endblock %}
