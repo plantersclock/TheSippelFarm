@@ -69,7 +69,7 @@
 
 #show-more-button {
     border-radius: 5px;
-    border: 2px solid #417066;
+    border: 2px solid #377d72;
     padding: 20px;
     width: 90%;
     margin-left: 5%;
@@ -87,6 +87,27 @@
 }
 
 .full-size-image .text{
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 15%;
+    text-align: center;
+    width: 60%;
+    color: white;
+}
+
+.event-scroll-image {
+    position: relative;
+    width: 90%;
+    background-image: url("/static/images/shop.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0px black;
+}
+
+.event-scroll-image .text{
     position: absolute;
     margin: 0 auto;
     left: 0;
