@@ -26,13 +26,13 @@
                 <div class = "gallery-item-left" style = 'background-image: url("/static/images/indoor.jpg");'>
                     <img src="/static/images/jump1.jpg" width= "100%" style="border-radius: 5px; visibility:hidden;"></img>
                     <div class = "text">
-                        <h5 style="font-family: 'Merriweather', serif;">Full Indoor Arena</h5>
+                        <h5 class = "noselect" style="font-family: 'Merriweather', serif;">Full Indoor Arena</h5>
                     </div>
                 </div>
                 <div class = "gallery-item-right" style = 'background-image: url("/static/images/outdoor.jpg");'>
                     <img src="/static/images/jump1.jpg" width= "100%" style="border-radius: 5px; visibility:hidden;"></img>
                     <div class = "text">
-                        <h5 style="font-family: 'Merriweather', serif;">Full Outdoor Arena</h5>
+                        <h5 class = "noselect" style="font-family: 'Merriweather', serif;">Full Outdoor Arena</h5>
                     </div>
                 </div>
             </div>
@@ -40,13 +40,13 @@
                 <div class = "gallery-item-left" style = 'background-image: url("/static/images/jump1.jpg");'>
                     <img src="/static/images/jump1.jpg" width= "100%" style="border-radius: 5px; visibility:hidden;"></img>
                     <div class = "text">
-                        <h5 style="font-family: 'Merriweather', serif;">Sand Jump Arena</h5>
+                        <h5 class = "noselect" style="font-family: 'Merriweather', serif;">Sand Jump Arena</h5>
                     </div>
                 </div>
                 <div class = "gallery-item-right" style = 'background-image: url("/static/images/jump2.jpg");'>
                     <img src="/static/images/jump1.jpg" width="100%" style="border-radius: 5px; visibility:hidden;"></img>
                     <div class = "text">
-                        <h5 style="font-family: 'Merriweather', serif;">Grass Jump Arena</h5>
+                        <h5 class = "noselect" style="font-family: 'Merriweather', serif;">Grass Jump Arena</h5>
                     </div>
                 </div>
             </div>
@@ -56,44 +56,18 @@
             <p>Hosting upper level clinicians and equine wellness practicioners, as well as schooling shows throughout the year.</p>
         </div>
         <div class="flex-container" style="overflow-x: auto; margin-top: 30px;">
+            {% for event in context.events %}
             <div class = "event-scroll-image dim" style="background-image: url('/static/images/event.jpg'); margin-left:5%;">
                 <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px; filter:brightness(60%)"></img>
                 <div class="text">
-                    <h2 style="font-family: 'Merriweather', serif;">Clinic<h2>
-                    <h3 style="font-family: 'Merriweather', serif;">Nov 3rd 2019<h3>
+                    <h2 class = "noselect" style="font-family: 'Merriweather', serif;">Clinic<h2>
+                    <h3 class = "noselect" style="font-family: 'Merriweather', serif;">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}<h3>
                 </div>
             </div>
-            <div class = "event-scroll-image dim" style="background-image: url('/static/images/event.jpg'); margin-left:5%;">
-                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px; filter:brightness(60%)"></img>
-                <div class="text">
-                    <h2 style="font-family: 'Merriweather', serif;">Show<h2>
-                    <h3 style="font-family: 'Merriweather', serif;">Nov 15th 2019<h3>
-                </div>
-            </div>
-            <div class = "event-scroll-image dim" style="background-image: url('/static/images/event.jpg'); margin-left:5%;">
-                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px; filter:brightness(60%)"></img>
-                <div class="text">
-                    <h2 style="font-family: 'Merriweather', serif;">Clinic<h2>
-                    <h3 style="font-family: 'Merriweather', serif;">Nov 21st 2019<h3>
-                </div>
-            </div>
-            <div class = "event-scroll-image dim" style="background-image: url('/static/images/event.jpg'); margin-left:5%;">
-                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px; filter:brightness(60%)"></img>
-                <div class="text">
-                    <h3 style="font-family: 'Merriweather', serif;">Clinic<h3>
-                    <h3 style="font-family: 'Merriweather', serif;">Dec 2nd 2019<h3>
-                </div>
-            </div>
-            <div class = "event-scroll-image dim" style="background-image: url('/static/images/event.jpg'); margin-left:5%;">
-                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px; filter:brightness(60%)"></img>
-                <div class="text">
-                    <h2 style="font-family: 'Merriweather', serif;">Clinic<h2>
-                    <h3 style="font-family: 'Merriweather', serif;">Dec 14th 2019<h3>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div id="show-more-button" style="margin-top: 20px; padding:10px; cursor: pointer;" onclick="location.href='/events'">
-            <p style="margin:0; text-align:center; color:#377d72; font-weight:500;">Show all Events</p>
+            <p class = "noselect" style="margin:0; text-align:center; color:#377d72; font-weight:500;">Show all Events</p>
         </div>
         <div style="margin-left:5%; margin-right:5%; margin-top: 30px;">
             <h3 style="font-family: 'Merriweather', serif;">For Sale</h3>
@@ -103,7 +77,7 @@
             <img src="/static/images/shop.jpg" width="100%" style="border-radius: 5px; visibility: hidden;"></img>
             <div class = "text" style="width:75%;">
                 <div id="show-more-button" style="padding-top:5px; padding-bottom: 5px;border-color: white; margin-top: 30%; cursor: pointer;" onclick="location.href='/for_sale'">
-                    <p style="margin:0; text-align:center; color:white; font-weight:500;">See What's For Sale</p>
+                    <p class = "noselect" style="margin:0; text-align:center; color:white; font-weight:500;">See What's For Sale</p>
                 </div>
             </div>
         </div>

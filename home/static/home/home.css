@@ -98,8 +98,7 @@
 }
 
 .event-scroll-image {
-    position: relative;
-    width: 90%;
+    position: relative;  
     background-image: url("/static/images/shop.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -117,5 +116,15 @@
     width: 60%;
     color: white;
 }
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+  }
 
 

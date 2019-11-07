@@ -21,6 +21,8 @@ import pytz
 import pendulum
 import uuid
 
+from events.models import Event
+
 
 
 class SignUp(generic.CreateView):
@@ -32,11 +34,23 @@ class SignUp(generic.CreateView):
 
 
 class HomeView(generic.ListView):
-
+    context_object_name = "context"
     template_name = "home/home.html"
     def get_queryset(self):
+        print (pendulum.now())
+        print (datetime.datetime.now())
+        context = {
+                'events': Event.objects.filter(published = True, end_date__gte = pendulum.now()).order_by('start_date')
+        }
 
-        return "hi"
+        print (context)
+
+        for event in context['events']:
+            print (event)
+
+        return context
+
+    
 
 
 
