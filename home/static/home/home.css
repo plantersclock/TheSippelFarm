@@ -25,7 +25,7 @@
 
 .gallery-item-left {
     position: relative;
-    width: 48%;
+    width: 100%;
     background-image: url("/static/images/indoor.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -39,7 +39,7 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: 15%;
+    top: 30%;
     text-align: center;
     width: 60%;
     color: white;
@@ -47,7 +47,7 @@
 
 .gallery-item-right {
     position: relative;
-    width: 48%;
+    width: 100%;
     background-image: url("/static/images/indoor.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -61,7 +61,7 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: 15%;
+    top: 30%;
     text-align: center;
     width: 60%;
     color: white;

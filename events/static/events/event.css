@@ -36,14 +36,14 @@
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
 
     background: linear-gradient(
         to right,
         var(--card-color-1),
         var(--card-color-1) 100px,
-        white 100px,
-        white 100%
+        #f2f8f7 100px,
+        #f2f8f7 100%
     );
 }
 
@@ -56,14 +56,14 @@
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
 
     background: linear-gradient(
         to right,
         var(--card-color-2),
         var(--card-color-2) 100px,
-        white 100px,
-        white 100%
+        #f2f8f7 100px,
+        #f2f8f7 100%
     );
 }
 
@@ -76,14 +76,14 @@
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
 
     background: linear-gradient(
         to right,
         var(--card-color-3),
         var(--card-color-3) 100px,
-        white 100px,
-        white 100%
+        #f2f8f7 100px,
+        #f2f8f7 100%
     );
 }
 
@@ -96,14 +96,14 @@
     -moz-box-shadow: 0 0 4px #ccc;
     -webkit-box-shadow: 0 0 4px #ccc;
     box-shadow: 0 0 4px #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
 
     background: linear-gradient(
         to right,
         var(--card-color-4),
         var(--card-color-4) 100px,
-        white 100px,
-        white 100%
+        #f2f8f7 100px,
+        #f2f8f7 100%
     );
 }
 
