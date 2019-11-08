@@ -50,7 +50,7 @@ class EventsView(generic.ListView):
 
     def get_queryset(self):
         context = {
-            "events": Event.objects.filter(published = True).order_by('start_date'),
+            "events": Event.objects.filter(published = True, end_date__gte = pendulum.now()).order_by('start_date'),
         }
         print(context)
         return context

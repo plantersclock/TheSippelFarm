@@ -4,10 +4,24 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
 
-    <div class="header-background">
-    <h1 style="text-align: center; color: white; font-size: 80px; padding-top:0px; font-family: 'Abril Fatface', cursive; font-weight: 300;"> Events</h1>
+    <div class="header-image">
+        <div>
+            <h3 style="font-family: 'Merriweather', serif; color: black; padding-top: 3vw; font-size: 20vw; text-align:center;">EVENTS</h3>
+        </div>
     </div>
-    <div style= "width: 100%">
+    <div style="background-color:#c2bcbe;">
+        <div style="margin-left:5%; margin-right:5%; padding-top: 20px; padding-bottom:20px">
+
+            <p>TSF hosts many upper level clinicians and equine wellness practitioners throughout the year, as well as periodic schooling shows. The events are posted below for outside haul-ins to sign up. The following is a list of some of the professionals that visit TSF on a regular basis:<br>
+                <br>
+                &bull;  Ellie Rawle, USDF Gold Medalist <br>
+                &bull;  Ashley Madison, USDF Gold Medalist<br>
+                &bull;  Jessica Bortner-Harris, 3*** Eventer & PEMF Practitioner<br>
+                &bull;  Mark Walker, Equine Rehab Specialist & Kinesiogist</p>
+        </div>
+    </div>
+    <div style= "width: 100%; margin-top:20px;" >
+        <h3 style="font-family: 'Merriweather', serif; margin-left: 5%; margin-bottom: 20px;">TSF Events</h3>
         {% for event in events.events %}
         <div style="cursor: pointer;" onclick="location.href='/events/{{event.id}}/sign_up'" {% if event.start_date|date:"M" == "Jan" or event.start_date|date:"M" == "May" or event.start_date|date:"M" == "Sep" %} class="event-card-1-background" {%elif event.start_date|date:"M" == "Feb" or event.start_date|date:"M" == "Jun" or event.start_date|date:"M" == "Oct" %} class="event-card-2-background" {%elif event.start_date|date:"M" == "Mar" or event.start_date|date:"M" == "Jul" or event.start_date|date:"M" == "Nov" %} class="event-card-3-background" {% else %} class="event-card-4-background" {%endif%}>
             <div class="flex-container">

@@ -9,6 +9,15 @@
     --card-color-4: #502929;
     }
 
+.header-image {
+    width: 100vw;
+    height: 75vw;
+    background-image: url("/static/images/events2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 0;
+}
+
 
 .header-background {
     width: 100%;

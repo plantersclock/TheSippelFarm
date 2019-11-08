@@ -147,12 +147,12 @@ EMAIL_HOST_PASSWORD = 'Boboman!337'
 
 
 # Turn on for Prod!!!!!!!
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-django_heroku.settings(locals())
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+# django_heroku.settings(locals())
 
-DEBUG = False
+DEBUG = True
 
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),
