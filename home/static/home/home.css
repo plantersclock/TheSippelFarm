@@ -1,3 +1,59 @@
+:root {
+    --darkest-color: #101210;
+    --background-color: #f4f6f6;
+    --main-base-color: #778377;
+    --secondary-base-color: #a4a89d;
+    --main-accent-color: #eb737c;
+    --secondary-accent-color: #fdc2c8;
+    }
+
+.darkest-color {
+    color: var(--darkest-color);
+}
+
+.background-color {
+    color: var(--background-color);
+}
+
+.main-base-color {
+    color: var(--main-base-color);
+}
+
+.secondary-base-color {
+    color: var(--secondary-base-color);
+}
+
+.main-accent-color {
+    color: var(--main-accent-color);
+}
+
+.secondary-accent-color {
+    color: var(--secondary-accent-color);
+}
+
+.bg-darkest-color {
+    background-color: var(--darkest-color);
+}
+
+.bg-background-color {
+    background-color: var(--background-color);
+}
+
+.bg-main-base-color {
+    background-color: var(--main-base-color);
+}
+
+.bg-secondary-base-color {
+    background-color: var(--secondary-base-color);
+}
+
+.bg-main-accent-color {
+    background-color: var(--main-accent-color);
+}
+
+.bg-secondary-accent-color {
+    background-color: var(--secondary-accent-color);
+}
 
 .header-image {
     width: 100vw;
@@ -42,7 +98,7 @@
     top: 30%;
     text-align: center;
     width: 60%;
-    color: white;
+    color: #f4f6f6;
 }
 
 .gallery-item-right {
@@ -64,7 +120,7 @@
     top: 30%;
     text-align: center;
     width: 60%;
-    color: white;
+    color: #f4f6f6;
 }
 
 #show-more-button {
@@ -79,7 +135,7 @@
 .full-size-image {
     position: relative;
     width: 90%;
-    background-image: url("/static/images/shop.jpg");
+    background-image: url("/static/images/shop2.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     border-radius: 5px;
@@ -91,14 +147,14 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: 15%;
+    top: 12%;
     text-align: center;
     width: 60%;
     color: white;
 }
 
 .event-scroll-image {
-    position: relative;  
+    position: relative;
     background-image: url("/static/images/shop.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -111,7 +167,7 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: 15%;
+    top: 5%;
     text-align: center;
     width: 60%;
     color: white;
@@ -126,5 +182,7 @@
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Opera and Firefox */
   }
+
+
 
 

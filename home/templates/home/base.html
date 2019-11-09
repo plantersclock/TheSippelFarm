@@ -21,28 +21,45 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page/events">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page/for_sale">For Sale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page/amenities">Amenities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page/about_us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page/contact_us">Contact Us</a>
+          </li>
         </ul>
         <ul class="navbar-nav">
-        {% if user.is_authenticated %}
+
           <li class="nav-item dropdown">
+              {% if user.is_authenticated %}
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{user}}
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'logout' %}"> logout</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-bottom: 10px;">
+
+                 <a class="dropdown-item" href="{% url 'logout' %}" > logout</a>
+                {% endif %}
               </div>
           </li>
-        {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">login</a>
-          </li>
-        {% endif %}
+
         </ul>
       </div>
     </nav>
   {% endblock %}
 
-<body style = "background-color: #f2f8f7;">
+<body class="bg-background-color">
 
   {% block content %}
   {% endblock %}

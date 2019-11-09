@@ -22,6 +22,7 @@ import pendulum
 import uuid
 
 from events.models import Event
+from .models import Page, PageContent
 
 
 
@@ -32,26 +33,25 @@ class SignUp(generic.CreateView):
 
 
 
-
 class HomeView(generic.ListView):
     context_object_name = "context"
     template_name = "home/home.html"
     def get_queryset(self):
-        print (pendulum.now())
-        print (datetime.datetime.now())
         context = {
-                'events': Event.objects.filter(published = True, end_date__gte = pendulum.now()).order_by('start_date')
+            'events': Event.objects.filter(published = True, end_date__gte = pendulum.now()).order_by('start_date')
         }
-
-        print (context)
-
-        for event in context['events']:
-            print (event)
-
         return context
 
-    
 
+def page(request, name):
+    page = get_object_or_404(Page, published = True, page_title = name)
+    print(page)
+    context = {
+        'page': page,
+        'page_content': PageContent.objects.filter(published = True, page = page)
+    }
+
+    return render(request, "home/page.html", context)
 
 
 

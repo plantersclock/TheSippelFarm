@@ -1,25 +1,33 @@
 :root {
-    --main-base-color: #192D2e;
-    --secondary-base-color: #617f7f;
-    --main-accent-color: #c97f04;
-    --secondary-accent-color: #efd9a7;
     --card-color-1: #417066;
     --card-color-2: #8b4f00;
     --card-color-3: #313b66;
     --card-color-4: #502929;
     }
 
-.header-image {
+.event-header-image {
+    position: relative;
     width: 100vw;
-    height: 75vw;
-    background-image: url("/static/images/events2.jpg");
+    height: auto;
+    background-image: url("/static/images/event2.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     padding-top: 0;
 }
 
+.event-header-image .text{
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 5%;
+    text-align: center;
+    width: 60%;
+    color: var(--background-color);
+}
 
-.header-background {
+
+.event-header-background {
     width: 100%;
     height: 110px;
     background-image: url("/static/images/wood.jpg");
@@ -28,100 +36,87 @@
 }
 
 .event-card-1-background {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 5px;
     margin-bottom: 10px;
     height: auto;
-    -moz-box-shadow: 0 0 4px #ccc;
-    -webkit-box-shadow: 0 0 4px #ccc;
-    box-shadow: 0 0 4px #ccc;
+
     border-radius: 5px;
 
     background: linear-gradient(
         to right,
         var(--card-color-1),
-        var(--card-color-1) 100px,
-        #f2f8f7 100px,
-        #f2f8f7 100%
+        var(--card-color-1) 80px,
+        var(--background-color) 80px,
+        var(--background-color) 100%
     );
 }
 
 .event-card-2-background {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 5px;
     margin-bottom: 10px;
     height: auto;
-    -moz-box-shadow: 0 0 4px #ccc;
-    -webkit-box-shadow: 0 0 4px #ccc;
-    box-shadow: 0 0 4px #ccc;
+
     border-radius: 5px;
 
     background: linear-gradient(
         to right,
         var(--card-color-2),
-        var(--card-color-2) 100px,
-        #f2f8f7 100px,
-        #f2f8f7 100%
+        var(--card-color-2) 80px,
+        #var(--background-color) 80px,
+        var(--background-color) 100%
     );
 }
 
 .event-card-3-background {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 5px;
     margin-bottom: 10px;
     height: auto;
-    -moz-box-shadow: 0 0 4px #ccc;
-    -webkit-box-shadow: 0 0 4px #ccc;
-    box-shadow: 0 0 4px #ccc;
-    border-radius: 5px;
+
+    border-radius: 3px;
 
     background: linear-gradient(
         to right,
-        var(--card-color-3),
-        var(--card-color-3) 100px,
-        #f2f8f7 100px,
-        #f2f8f7 100%
+        var(--main-base-color),
+        var(--main-base-color) 80px,
+        var(--background-color) 80px,
+        var(--background-color) 100%
     );
 }
 
 .event-card-4-background {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 5px;
     margin-bottom: 10px;
     height: auto;
-    -moz-box-shadow: 0 0 4px #ccc;
-    -webkit-box-shadow: 0 0 4px #ccc;
-    box-shadow: 0 0 4px #ccc;
+
     border-radius: 5px;
 
     background: linear-gradient(
         to right,
         var(--card-color-4),
-        var(--card-color-4) 100px,
-        #f2f8f7 100px,
-        #f2f8f7 100%
+        var(--card-color-4) 80px,
+        var(--background-color) 80px,
+        var(--background-color) 100%
     );
 }
 
 .horse {
-    height: 150px;
+    height: 110px;
     background-image: url("https://i.imgur.com/QZQIg8R.png");
     background-repeat: no-repeat;
-    background-size: 100px 150px;
+    background-size: 100%;
     padding-top: 0;
-    width: 100px;
+    width: 80px;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-}
+
 
 .event-details{
     padding: 20px;
@@ -133,9 +128,5 @@
     }
   }
 
-input[readonly]{
-    background-color:transparent;
-    border: 0;
-    font-size: 1em;
-  }
+
 

@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import django_heroku
+from google.oauth2 import service_account
+import json
+import logging
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -144,6 +147,16 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'mattpatwright@gmail.com'
 EMAIL_HOST_PASSWORD = 'Boboman!337'
 
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'thesippelfarm'
+GS_PROJECT_ID = '1045718034708'
+
+
+
+#Turn off for Prod
+# GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+#     os.path.join(BASE_DIR, 'gcscreds.json')
+# )
 
 
 # Turn on for Prod!!!!!!!
@@ -151,6 +164,13 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
 django_heroku.settings(locals())
+gscreds = json.loads(os.environ['gcscreds'])
+logger = logging.getLogger(__name__)
+logger.error(gscreds)
+
+GS_CREDENTIALS = service_account.Credentials.from_service_account_info(
+    gscreds)
+
 
 DEBUG = False
 
