@@ -55,14 +55,44 @@
     background-color: var(--secondary-accent-color);
 }
 
-.gallery-item {
+.gallery {
     position: relative;
     width: 45.5%;
-    padding-top: 60.5%;
-    background-color: black;
-    border-radius: 2px;
 }
 
+.gallery .image {
+    position: relative;
+    width: 100%;
+    padding-top: 133%;
+    background-color: black;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+}
+
+.gallery .image .text{
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    color: white;
+}
+
+.gallery .date{
+    margin-top: 12px;
+    margin-bottom: 0px;
+    color: gray;
+}
+
+.gallery .title {
+    margin-top:7px;
+    margin-bottom: 0px;
+    color: black;
+}
+
+.gallery .info {
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
 .header-image {
     width: 100vw;
     height: 58vw;
