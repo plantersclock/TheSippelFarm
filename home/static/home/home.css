@@ -55,6 +55,14 @@
     background-color: var(--secondary-accent-color);
 }
 
+.gallery-item {
+    position: relative;
+    width: 45.5%;
+    padding-top: 60.5%;
+    background-color: black;
+    border-radius: 2px;
+}
+
 .header-image {
     width: 100vw;
     height: 58vw;

@@ -158,6 +158,8 @@ GS_PROJECT_ID = '1045718034708'
 #     os.path.join(BASE_DIR, 'gcscreds.json')
 # )
 
+# DEBUG = True
+
 
 # Turn on for Prod!!!!!!!
 SESSION_COOKIE_SECURE = True
@@ -170,7 +172,6 @@ logger.error(gscreds)
 
 GS_CREDENTIALS = service_account.Credentials.from_service_account_info(
     gscreds)
-
 
 DEBUG = False
 
