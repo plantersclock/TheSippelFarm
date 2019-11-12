@@ -225,6 +225,12 @@
     }
 }
 
+@media only screen and (min-width: 500px) {
+    .additional-margins {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
 @media only screen and (min-width: 850px) {
     .additional-margins {
         margin-left: 10%;
