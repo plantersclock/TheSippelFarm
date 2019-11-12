@@ -22,11 +22,13 @@
       <div class="full-size-image" style="margin-left:5%; margin:top 20px; background-image: url('{{ content.photo.url }}');">
             <img src="{{ content.photo.url }}" width="100%" style="border-radius: 5px;visibility:hidden">
         </div>
-      <div style="padding-top: 20px; padding-bottom: 20px;">
+      <div style="padding-top: 20px;">
           <div style="margin-left:5%; margin-right:5%;">
               <h3 class = "darkest-color title" >{{ content.content_title}} </h3>
-              <p class = "background-color subtitle"> {{ content.content_title|linebreaks }}</p>
+              <p class = "background-color subtitle"> {{ content.content_text|linebreaks }}</p>
           </div>
+      </div>
+      <div style="border-top: solid 2px #e6e6e6; margin-left: 5%; margin-right: 5%; margin-top:20px;">
       </div>
       {% endfor %}
 
