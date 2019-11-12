@@ -8,32 +8,24 @@
     <div style="width: 100%">
 
       <div class="event-header-image" style = "background-image: url('{{ page.photo.url }}');">
-          <img src="{{ page.photo.url }}" width="100%"></img>
-          <div class="text">
-              <h3 class="main-accent-color" style="font-family: 'Merriweather', serif; padding-top: 5vw; font-size: 15vw; text-align:center;">{{ page.photo_title }}</h3>
-          </div>
+          <img src="{{ page.photo.url }}" width="100%">
       </div>
 
       <div>
           <div style="margin-left:5%; margin-right:5%; padding-top: 20px;">
-              <h3 class = "darkest-color" style="font-family: 'Merriweather', serif;">{{page.content_title}}</h3>
-              <p>{{ page.content_text|linebreaks }}</p>
+              <h3 class = "darkest-color title">{{page.content_title}}</h3>
+              <p class="subtitle">{{ page.content_text|linebreaks }}</p>
           </div>
       </div>
 
       {% for content in page_content %}
-      <div class="full-size-image" style="margin-left:5%; margin:top 20px; margin-bottom: 20px; background-image: url('{{ content.photo.url }}');">
-            <img src="{{ content.photo.url }}" width="100%" style="border-radius: 5px;visibility:hidden"></img>
-            <div class = "text" style="width:75%;">
-
-              <p class = "noselect background-color" style="margin:0; text-align:center; font-weight:500;">{{content.photo_title}}</p>
-
-            </div>
+      <div class="full-size-image" style="margin-left:5%; margin:top 20px; background-image: url('{{ content.photo.url }}');">
+            <img src="{{ content.photo.url }}" width="100%" style="border-radius: 5px;visibility:hidden">
         </div>
       <div style="padding-top: 20px; padding-bottom: 20px;">
           <div style="margin-left:5%; margin-right:5%;">
-              <h3 class = "darkest-color" style="font-family: 'Merriweather', serif;">{{ content.content_title}} </h3>
-              <p class = "background-color"> {{ content.content_title|linebreaks }}</p>
+              <h3 class = "darkest-color title" >{{ content.content_title}} </h3>
+              <p class = "background-color subtitle"> {{ content.content_title|linebreaks }}</p>
           </div>
       </div>
       {% endfor %}

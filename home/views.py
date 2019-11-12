@@ -48,7 +48,7 @@ def page(request, name):
     print(page)
     context = {
         'page': page,
-        'page_content': PageContent.objects.filter(published = True, page = page)
+        'page_content': PageContent.objects.filter(published = True, page = page).order_by('-order')
     }
 
     return render(request, "home/page.html", context)
