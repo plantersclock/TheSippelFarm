@@ -19,7 +19,7 @@
       </div>
 
       {% for content in page_content %}
-      <div class="full-size-image" style="margin-left:5%; margin:top 20px; background-image: url('{{ content.photo.url }}');">
+      <div class="full-size-image" style="margin-left:5%; background-image: url('{{ content.photo.url }}');">
             <img src="{{ content.photo.url }}" width="100%" style="border-radius: 5px;visibility:hidden">
         </div>
       <div style="padding-top: 20px;">
@@ -28,7 +28,7 @@
               <p class = "background-color subtitle"> {{ content.content_text|linebreaks }}</p>
           </div>
       </div>
-      <div style="border-top: solid 2px #e6e6e6; margin-left: 5%; margin-right: 5%; margin-top:20px;">
+      <div style="margin-left: 5%; width: 90%; margin-right: 5%; margin-top:20px; margin-bottom: 20px;">
       </div>
       {% endfor %}
 
