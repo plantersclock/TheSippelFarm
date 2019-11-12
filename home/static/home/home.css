@@ -120,7 +120,7 @@
 .header-image {
     width: 100vw;
     height: 58vw;
-    background-image: url("/static/images/farm.jpg");
+    background-image: url("/static/images/barn2.jpg");
     background-repeat: no-repeat;
     background-size: 100vw 58vw;
     padding-top: 0;
@@ -225,12 +225,24 @@
     }
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 475px) {
     .additional-margins {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    .header-image {
+        width: 100%;
+        padding-top: 58%;
+        background-size: 100%;
+        height: auto;
     }
 
+    .flex-container .gallery .event-images {
+        width: 35vw;
+        padding-top:46vw;
+    }
+    
+}
 @media only screen and (min-width: 850px) {
     .additional-margins {
         margin-left: 10%;
