@@ -1,128 +1,83 @@
 {% extends "home/base.html" %}
 
 {% block content %}
-
+  <div class="additional-margins">
     <div class="header-image">
-        <div>
-            <img src="/static/images/TSF_Logo.png" height="100vw" style="margin-left:10vw; "></img>
-        </div>
     </div>
-    <div style="width:100%; padding-top: 30px;">
-        <div style="text-align:center; margin-bottom: 30px;">
-            <h5 class="main-accent-color" style="font-family: 'Courgette', cursive;">Where no dream is too big<br> and no victory too small</h5>
-            <p class="darkest-color">A private equine training facility<br>located on 12 beautiful rolling acres<br>in Annville, Pennsylvania.</p>
+    <div style="width:100%;">
+        <div style="text-align:center; margin-top: 40px; margin-bottom: 40px; padding-left: 6%; padding-right: 6%">
+            <h5 class="darkest-color" style="font-family: 'Merriweather', serif; margin-bottom: 0px;">The Sippel Farm is a private equine training facility located on 12 beautiful rolling acres in<br>Annville, Pennsylvania</h5>
         </div>
-        <div>
-            <img src="/static/images/farm.jpg" width="90%" style="margin-left:5%; border-radius: 5px;"></img>
+        <div style="border-top: solid 2px #e6e6e6; margin-left: 5%; margin-right: 5%;">
         </div>
-        <div style="margin-top: 30px; padding-top: 5vw; padding-bottom: 5vw;">
+        <div style="margin-top: 20px; margin-bottom: 20px;">
           <div style="margin-left:5%; margin-right:5%;">
-              <h3 class = "darkest-color" style="font-family: 'Merriweather', serif;">TSF Amenities</h3>
-              <p class = "darkest-color">12 stall barn (11- 12x12 stalls & 1- 12x18 foaling/layup stall) with numerous riding areas. </p>
+              <h3 class = "title">Amenities</h3>
+              <p class = "subtitle">12 stall barn with foaling/layup and numerous riding areas.</p>
           </div>
 
 
-          <div style="overflow-x: auto; margin-top: 20px; margin-left:5%; width: 90%;">
-            <div class="flex-container">
-                <div style="width:49%;">
-                  <div class = "gallery-item-left" style = 'background-image: url("/static/images/indoor.jpg");'>
-                      <img src="/static/images/jump1.jpg" width= "100%" style="border-radius: 5px; visibility:hidden;"></img>
-                      <div class = "text">
-                          <h5 class = "noselect background-color" style="font-family: 'Merriweather', serif;">Indoor Arena</h5>
-                      </div>
-                  </div>
-
+          <div class="desktop-gallery" style="margin-left:5%;">
+            <div class="flex-container desktop-neg-margins">
+                <div class="gallery">
+                    <div class="image"style = 'background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
+                                              url("/static/images/indoor.jpg");'><h4 class="text">Indoor Arena</h4></div>
                 </div>
-
-                <div style="width:49%;">
-                  <div class = "gallery-item-right" style = 'background-image: url("/static/images/outdoor.jpg");'>
-                      <img src="/static/images/jump1.jpg" width= "100%" style="border-radius: 5px; visibility:hidden;"></img>
-                      <div class = "text">
-                          <h5 class = "noselect background-color" style="font-family: 'Merriweather', serif;">Dressage Arena</h5>
-                      </div>
-                  </div>
-
+                <div style="width:3.5%"></div>
+                <div class="gallery">
+                    <div class="image"style = 'background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
+                                              url("/static/images/outdoor.jpg");'><h4 class="text">Dressage Arena</h4></div>
                 </div>
             </div>
-
-            <div class="flex-container" style="margin-top: 4px;">
-              <div style="width:49%;">
-                <div class = "gallery-item-left" style = 'background-image: url("/static/images/jump1.jpg");'>
-                    <img src="/static/images/jump1.jpg" width= "100%" style="border-radius: 5px; visibility:hidden;"></img>
-                    <div class = "text">
-                        <h5 class = "noselect background-color" style="font-family: 'Merriweather', serif;">Jump Ring</h5>
-                    </div>
-                  </div>
-
+            <div class="flex-container desktop-margins" >
+                <div class="gallery" style="margin-top: 12px;">
+                    <div class="image"style = 'background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
+                                              url("/static/images/horse_jumping.png");'><h4 class="text">Jump Field</h4></div>
                 </div>
-
-              <div style="width:49%;">
-                <div class = "gallery-item-right" style = 'background-image: url("/static/images/jump2.jpg");'>
-                    <img src="/static/images/jump1.jpg" width="100%" style="border-radius: 5px; visibility:hidden;"></img>
-                    <div class = "text">
-                        <h5 class = "noselect background-color" style="font-family: 'Merriweather', serif;">Jump Field</h5>
-                    </div>
+                <div style="width:3.5%"></div>
+                <div class="gallery" style="margin-top: 12px;">
+                    <div class="image"style = 'background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
+                                              url("/static/images/jump2.jpg");'><h4 class="text">Jump Ring</h4></div>
                 </div>
-
-              </div>
             </div>
           </div>
         </div>
-        <div style="margin-left:5%; margin-right:5%; margin-top: 30px;">
-            <h3 class="darkest-color" style="font-family: 'Merriweather', serif;">TSF Events</h3>
-            <p class="darkest-color">Hosting upper level clinicians and equine wellness practicioners, as well as schooling shows throughout the year.</p>
+        <div style="border-top: solid 2px #e6e6e6; margin-left: 5%; margin-right: 5%; margin-top: 40px;">
         </div>
-        <div class="flex-container" style="overflow-x: auto; margin-top: 30px;">
+        <div style="margin-left:5%; margin-right:5%; margin-top: 20px;">
+            <h3 class="title">Events</h3>
+            <p class="subtitle">Hosting upper level clinicians and equine wellness practicioners, as well as schooling shows throughout the year.</p>
+        </div>
+        <div class="flex-container" style="overflow-x: auto; margin-left: 5%; margin-right: 5%;">
             {% for event in context.events %}
-            <div class = "event-scroll-image dim" style="background-image: url('/static/images/event.jpg'); margin-left:5%;">
-                <img src="/static/images/event.jpg" width="150vw" style="border-radius: 10px; filter:brightness(55%)"></img>
-                <div class="text">
-                    <h2 class = "noselect background-color" style="font-family: 'Merriweather', serif;">Clinic<h2>
-                    <h3 class = "noselect background-color" style="font-family: 'Merriweather', serif; margin-top:25px;">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}<h3>
-                </div>
+            <div class="gallery">
+                <div class="event-images" style = 'background-image: url("/static/images/training.jpg"); '></div>
+                <h5 class="date">NOVEMBER 20th</h5>
+                <h3 class="title">Clinic</h3>
+                <h5 class="info" style="margin-bottom:20px;">Host: Leah Sippel</h5>
             </div>
+            <div style="margin-left: 3.5%;"></div>
             {% endfor %}
         </div>
         <div id="show-more-button" style="margin-top: 20px; padding:10px; cursor: pointer;" onclick="location.href='/events'">
             <p class = "noselect main-accent-color" style="margin:0; text-align:center; font-weight:500;">Show all Events</p>
         </div>
-        <div style="margin-left:5%; margin-right:5%; margin-top: 30px;">
-            <h3 style="font-family: 'Merriweather', serif;">For Sale</h3>
-            <p>TSF horses, tack and merchandise for sale now </p>
+        <div style="margin-left:5%; margin-right:5%; margin-top: 20px;">
+            <h3 class="title">For Sale</h3>
+            <p class="subtitle">Horses, tack and merchandise for sale now </p>
         </div>
-        <div class="full-size-image" style="margin-left:5%; margin:top 20px; margin-bottom: 20px;">
-            <img src="/static/images/shop2.jpg" width="100%" style="border-radius: 5px; visibility: hidden;"></img>
+        <div class="full-size-image" style="margin-left:5%; margin-top: 20px; margin-bottom: 40px;">
+            <img src="/static/images/tack_room.jpg" width="100%" style="border-radius: 5px; visibility: hidden;"></img>
             <div class = "text" style="width:75%;">
-                <div id="show-more-button" style="padding-top:5px; padding-bottom: 5px;border-color: white; margin-top: 30%; cursor: pointer;" onclick="location.href='page/for_sale'">
-                    <p class = "noselect background-color" style="margin:0; text-align:center; font-weight:500;">See What's For Sale</p>
+                <div id="show-more-button" style="padding-top:5px; padding-bottom: 5px; border-color: white; background-color: white; margin-top: 30%; cursor: pointer;" onclick="location.href='page/for_sale'">
+                    <p class = "noselect subtitle" style="margin:0; text-align:center; font-size: 14px;">See What's For Sale</p>
                 </div>
             </div>
         </div>
 
 
     </div>
-    <div class="flex-container" style="margin-left: 5%">
-        <div class="gallery">
-            <div class="image"style = 'background-image: url("/static/images/horse_jumping.png");'><h4 class="text">Jump Arena</h4></div>
-            <h5 class="date">hi</h5>
-            <h3 class="title">hi</h3>
-            <h5 class="info">hi</h5>
-        </div>
-        <div style="width:3.5%"></div>
-        <div class="gallery">
-            <div class="image" style = 'background-image: url("/static/images/horse_jumping.png");'></div>
-        </div>
-    </div>
-    <div class="flex-container" style="margin-left: 5%">
-        <div class="gallery">
-            <div class="image"style = 'background-image: url("/static/images/horse_jumping.png");'></div>
-            <h3>hi</h3>
-        </div>
-        <div style="width:3.5%"></div>
-        <div class="gallery">
-            <div class="image" style = 'background-image: url("/static/images/horse_jumping.png");'></div>
-        </div>
-    </div>
 
+  </div>
 
 {% endblock %}

@@ -154,26 +154,26 @@ GS_PROJECT_ID = '1045718034708'
 
 
 #Turn off for Prod
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    os.path.join(BASE_DIR, 'gcscreds.json')
-)
+# GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+#     os.path.join(BASE_DIR, 'gcscreds.json')
+# )
 
-DEBUG = True
+# DEBUG = True
 
 
 # Turn on for Prod!!!!!!!
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
-# django_heroku.settings(locals())
-# gscreds = json.loads(os.environ['gcscreds'])
-# logger = logging.getLogger(__name__)
-# logger.error(gscreds)
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+django_heroku.settings(locals())
+gscreds = json.loads(os.environ['gcscreds'])
+logger = logging.getLogger(__name__)
+logger.error(gscreds)
 
-# GS_CREDENTIALS = service_account.Credentials.from_service_account_info(
-#     gscreds)
+GS_CREDENTIALS = service_account.Credentials.from_service_account_info(
+    gscreds)
 
-# DEBUG = False
+DEBUG = False
 
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),

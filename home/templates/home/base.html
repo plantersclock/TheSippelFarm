@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
 
 
   {% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top:0; padding-bottom:0;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top:23px; padding-bottom:23px;">
               {% load bootstrap4 %}
               {% bootstrap_css %}
               {% bootstrap_javascript jquery='full' %}
-      <img class="navbar-brand" src="https://i.imgur.com/vr0hSne.png" height="50px" style="margin:0; padding:0;"></img>
-      <a class="navbar-brand" style="margin:0; font-size: 20px; font-family: 'Merriweather', serif;" href="/">The Sippel Farm</a>
+      <img class="navbar-brand" src="https://i.imgur.com/vr0hSne.png" height="60px" style="margin:0; padding:0;"></img>
+      <a class="navbar-brand heading-font" style="margin:0; padding:0; font-family: 'Merriweather', serif;" href="/">The Sippel Farm</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,19 +26,19 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="events">Events</a>
+            <a class="nav-link" href="/events">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="page/for_sale">For Sale</a>
+            <a class="nav-link" href="/page/for_sale">For Sale</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="page/amenities">Amenities</a>
+            <a class="nav-link" href="/page/amenities">Amenities</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="page/about_us">About Us</a>
+            <a class="nav-link" href="/page/about_us">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact_us">Contact Us</a>
+            <a class="nav-link" href="/contact_us">Contact Us</a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -59,7 +60,7 @@
     </nav>
   {% endblock %}
 
-<body class="bg-background-color">
+<body class="bg-background-color" style="width: 100%">
 
   {% block content %}
   {% endblock %}
