@@ -4,10 +4,12 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
 
-    
+
 
     <div style="margin: 5%; margin-top: 10px; margin-bottom: 10px;">
-    <h3> Signing up for {{event.name}}<br>with {{event.professional.name}}</h3>
+    <div class="event-header-image" style= "width:100%; padding-top: 75%; padding-bottom: 20px; border-radius: 2px;"></div>
+    <h3 class="title">{{event.name}}</h3>
+    <p class="subtitle">Clinician: {{event.professional.name}}</p>
     <p style="color:red;">{{error}}</p>
     {% load bootstrap4 %}
     {% bootstrap_css %}
@@ -20,7 +22,7 @@
         <button type="submit" class="btn btn-success">Sign-Up</button>
 
     </form>
-    
+
     </div>
 {% endblock %}
 

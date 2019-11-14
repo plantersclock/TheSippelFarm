@@ -6,6 +6,13 @@ from django.utils import timezone
 from bootstrap_datepicker_plus import DateTimePickerInput
 from django.contrib.auth.models import User
 
+# Choices
+
+payment_method = [
+    ("Check/Cash", "Check/Cash"),
+    ("Paypal", "Paypal"),
+]
+
 # Create your models here.
 
 class Professional(models.Model):
@@ -33,6 +40,7 @@ class EventJoined(models.Model):
     email= models.EmailField(max_length=256)
     rider = models.CharField("Rider's Name", max_length=128)
     horse = models.CharField("Horse's Name", max_length=128)
+    payment = models.CharField(max_length=200, choices=payment_method)
     notes = models.TextField('Scheduling Notes', null=True, default=None, blank=True)
 
     class Meta:

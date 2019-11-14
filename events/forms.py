@@ -14,7 +14,8 @@ from .models import (
 class EventSignUpForm(forms.ModelForm):
     class Meta:
         model = EventJoined
-        fields = ["email", "rider", "horse", "notes"]
+        fields = ["email", "rider", "horse", "payment", "notes"]
+        widgets = { "payment": forms.Select(attrs={"class":"form-control"}),}
 
 class AttendeeScheduleForm(forms.ModelForm):
     # pk = forms.ModelChoiceField(
