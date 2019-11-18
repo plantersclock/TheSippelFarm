@@ -10,13 +10,16 @@
 
         {{ form.media }}
         {% csrf_token %}
-        <div style="width: 300px; margin-left: 20px; margin-right: 20px;">
+        <div style="width: 90%; margin-left: 5%; margin-right: 5%;">
 
-
+        <p class="subtitle"> Attendee </p>
         {{ form.attendee}}
         <div name= "sched_note" id="sched_note" style = "margin-top: 10px;"></div>
+        <p class="subtitle"> Date </p>
         <div style = "margin-top: 10px;">{{ form.day|default_if_none:"" }}</div>
+        <p class="subtitle"> Start Time </p>
         <div style = "margin-top: 10px;">{{ form.time|default_if_none:"" }}</div>
+        <p class="subtitle"> Duration </p>
         <div style = "margin-top: 10px;">{{ form.duration|default_if_none:""}}</div>
 
         <div style="margin-top:10px;">
@@ -64,7 +67,7 @@
             document.getElementById("id_duration").value=data.duration;
           }
           else {
-            document.getElementById("sched_note").innerHTML="";
+            document.getElementById("sched_note").innerHTML="Scheduling Note: " + data.notes;
             document.getElementById("id_day").value="";
             document.getElementById("id_time").value="";
             document.getElementById("id_duration").value="";

@@ -86,12 +86,12 @@ def event_sign_up(request, pk):
             try:
                 print(new_sign_up.email)
                 new_sign_up.save()
-                print("this far")
-                subject = 'Thank you for registering to our site'
-                message = ' it  means a world to us '
+                print (new_sign_up.event.name)
+                subject = '{}'.format(new_sign_up.event.name)
+                message = 'We are excited to see you there!'
                 email_from = settings.EMAIL_HOST_USER
                 print(settings.EMAIL_HOST_USER)
-                recipient_list = ['mattman861@gmail.com',]
+                recipient_list = [new_sign_up.email,]
                 print ("hi")
                 send_mail( subject, message, email_from, recipient_list )
                 return HttpResponseRedirect("/events")
@@ -157,6 +157,7 @@ def attendee_defaults(request):
     else:
         data = {
             'is_scheduled': False,
+            'notes': EventJoined.objects.get(id=attendee).notes
         }
 
 
