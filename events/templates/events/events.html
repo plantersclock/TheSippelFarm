@@ -4,37 +4,35 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
     <link rel="stylesheet" type="text/css" href="/static/home/home.css">
-
-    <div class="event-header-image" style= "height: 75vw;">
+    <div class="additional-margins">
+        <div class="event-header-image" style= "padding-top: 75%;">
+        </div>
         <div>
-            <h3 class="main-accent-color" style="font-family: 'Merriweather', serif; padding-top: 5vw; font-size: 20vw; text-align:center;">EVENTS</h3>
-        </div>
-    </div>
-    <div>
-        <div style="margin-left:5%; margin-right:5%; padding-top: 20px; padding-bottom:20px">
-
-            <p>TSF hosts many upper level clinicians and equine wellness practitioners throughout the year, as well as periodic schooling shows. The events are posted below for outside haul-ins to sign up. The following is a list of some of the professionals that visit TSF on a regular basis:<br>
-                <br>
-                &bull;  Ellie Rawle, USDF Gold Medalist <br>
-                &bull;  Ashley Madison, USDF Gold Medalist<br>
-                &bull;  Jessica Bortner-Harris, 3*** Eventer & PEMF Practitioner<br>
-                &bull;  Mark Walker, Equine Rehab Specialist & Kinesiogist</p>
-        </div>
-    </div>
-    <div class="bg-secondary-base-color" style= "width: 100%; padding-top:20px; padding-bottom: 20px" >
-        <h3 class="darkest-color" style="font-family: 'Merriweather', serif; margin-left: 5%; ;">TSF Events</h3>
-        {% for event in events.events %}
-        <div style="cursor: pointer;" onclick="location.href='/events/{{event.id}}/sign_up'" {% if event.start_date|date:"M" == "Jan" or event.start_date|date:"M" == "May" or event.start_date|date:"M" == "Sep" %} class="event-card-1-background" {%elif event.start_date|date:"M" == "Feb" or event.start_date|date:"M" == "Jun" or event.start_date|date:"M" == "Oct" %} class="event-card-2-background" {%elif event.start_date|date:"M" == "Mar" or event.start_date|date:"M" == "Jul" or event.start_date|date:"M" == "Nov" %} class="event-card-3-background" {% else %} class="event-card-4-background" {%endif%}>
-            <div class="flex-container">
-                <div class="horse"><p style="font-family: 'Merriweather', serif; width: 80px; text-align: center; padding-top: 10%; color:#f2f8f7; font-size: 20px">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}</p></div>
-                <div class="event-details">
-                    <h3 style="font-family: 'Merriweather', serif;" id="card-header">{{event.name}}</h3>
-                    <p style="margin: 0;">Pro: {{event.professional}}</p>
-
-                </div>
+            <div style="margin-left:5%; margin-right:5%; padding-top: 20px; padding-bottom:20px">
+                <h3 class = "title">Events</h3>
+                <p>TSF hosts many upper level clinicians and equine wellness practitioners throughout the year, as well as periodic schooling shows. The events are posted below for outside haul-ins to sign up. The following is a list of some of the professionals that visit TSF on a regular basis:<br>
+                    <br>
+                    &bull;  Ellie Rawle, USDF Gold Medalist <br>
+                    &bull;  Ashley Madison, USDF Gold Medalist<br>
+                    &bull;  Jessica Bortner-Harris, 3*** Eventer & PEMF Practitioner<br>
+                    &bull;  Mark Walker, Equine Rehab Specialist & Kinesiogist</p>
             </div>
         </div>
-        {% endfor %}
+        <div class="bg-secondary-base-color" style= "width: 100%; padding-top:20px; padding-bottom: 20px" >
+            <h3 class="darkest-color" style="font-family: 'Merriweather', serif; margin-left: 5%; ;">TSF Events</h3>
+            {% for event in events.events %}
+            <div style="cursor: pointer;" onclick="location.href='/events/{{event.id}}/sign_up'" {% if event.start_date|date:"M" == "Jan" or event.start_date|date:"M" == "May" or event.start_date|date:"M" == "Sep" %} class="event-card-1-background" {%elif event.start_date|date:"M" == "Feb" or event.start_date|date:"M" == "Jun" or event.start_date|date:"M" == "Oct" %} class="event-card-2-background" {%elif event.start_date|date:"M" == "Mar" or event.start_date|date:"M" == "Jul" or event.start_date|date:"M" == "Nov" %} class="event-card-3-background" {% else %} class="event-card-4-background" {%endif%}>
+                <div class="flex-container">
+                    <div class="horse"><p style="font-family: 'Merriweather', serif; width: 80px; text-align: center; padding-top: 10%; color:#f2f8f7; font-size: 20px">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}</p></div>
+                    <div class="event-details">
+                        <h3 class="title" id="card-header">{{event.name}}</h3>
+                        <p style="margin: 0;">Pro: {{event.professional}}</p>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
 
