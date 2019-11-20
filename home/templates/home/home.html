@@ -51,7 +51,7 @@
         <div class="flex-container" style="overflow-x: auto; margin-left: 5%; margin-right: 5%;">
             {% for event in context.events %}
             <div class="gallery">
-                <div class="event-images" style = 'background-image: url("/static/images/training.jpg"); '></div>
+                <div class="event-images" onclick="location.href='/events/{{event.id}}/sign_up'" style = 'cursor: pointer; background-image: url("/static/images/training.jpg"); '></div>
                 <h5 class="date">NOVEMBER 20th</h5>
                 <h3 class="title">Clinic</h3>
                 <h5 class="info" style="margin-bottom:20px;">Host: Leah Sippel</h5>
