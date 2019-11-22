@@ -1,0 +1,33 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/events/event.css">
+    <link rel="stylesheet" type="text/css" href="/static/home/home.css">
+
+    <div class="additional-margins">
+        <div style="width: 100%">
+
+            {% for item in for_sale_items %}
+            <div class="for-sale-item">
+              <div class="full-size-image for-sale-pic" style="background-image: url('{{ item.photo.url }}');">
+              </div>
+              <div class="for-sale-content">
+                <div style="padding-top: 20px;">
+                    <div style="margin-left:5%; margin-right:5%;">
+                        <h3 class = "darkest-color title" >{{ item.content_title}} </h3>
+                        <p class = "background-color subtitle" style="margin-top: 10px;"> {{ item.content_text|linebreaks }}</p>
+                    </div>
+                </div>
+                <div style="margin-left: 5%; width: 90%; margin-right: 5%; margin-top:20px; margin-bottom: 20px;">
+                </div>
+                <div id="show-more-button" style="margin-top: 20px; margin-bottom: 20px; padding:10px; cursor: pointer;" onclick="location.href='/contact-us/{{item.content_title}}'">
+                    <p class = "noselect main-accent-color" style="margin:0; text-align:center; font-weight:500;">Contact Us About {{item.content_title}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

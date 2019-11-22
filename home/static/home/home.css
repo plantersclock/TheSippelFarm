@@ -218,6 +218,11 @@
     font-size: 18px;
 }
 
+.for-sale-pic{
+    padding-top: 60%;
+    margin-left:5%;
+}
+
 @media only screen and (min-width: 350px) {
     .navbar.navbar-light .heading-font {
         font-size: 25px;
@@ -240,7 +245,7 @@
         width: 35vw;
         padding-top:46vw;
     }
-    
+
 }
 @media only screen and (min-width: 850px) {
     .additional-margins {
@@ -296,6 +301,22 @@
     }
     .navbar {
         padding-left: 20%;
+    }
+
+    .for-sale-item{
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+
+    .for-sale-item .for-sale-pic {
+        width: 50%;
+        padding-top: 31%;
+        margin-left:0%;
+    }
+
+    .for-sale-item .for-sale-content {
+        width: 50%;
     }
 }
 

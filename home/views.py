@@ -22,8 +22,11 @@ import pendulum
 import uuid
 
 from events.models import Event
-from .models import Page, PageContent
+from .models import Page, PageContent, ForSaleItems
 from .forms import ContactUsForm
+
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 
@@ -54,6 +57,13 @@ def page(request, name):
 
     return render(request, "home/page.html", context)
 
+def for_sale(request):
+    context = {
+        'for_sale_items': ForSaleItems.objects.filter(published = True).order_by('order')
+    }
+
+    return render(request, "home/for-sale.html", context)
+
 def contact_us(request, ref):
     # if this is a POST request we need to process the form data
     if request.method == "POST":
@@ -66,17 +76,17 @@ def contact_us(request, ref):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            contact_us = form
+            contact_us = form.cleaned_data
             try:
-                print(contact_us.email)
-                print (contact_us.name)
-                subject = '{} Message From {} Email {}'.format(ref, contact_us.name, contact_us.email)
-                message = contact_us.message
+                subject = '{} Message From {}: {}'.format(ref, contact_us['name'], contact_us['email'])
+                message = contact_us['message']
                 email_from = settings.EMAIL_HOST_USER
-                print(settings.EMAIL_HOST_USER)
                 recipient_list = ['mattman861@gmail.com',]
                 send_mail( subject, message, email_from, recipient_list )
-                return HttpResponseRedirect("/contact-us")
+                if ref == "contact-us":
+                    return HttpResponseRedirect("/")
+                else:
+                    return HttpResponseRedirect("/for-sale")
             except:
                 context = {
                     "error": "Something went wrong :(",

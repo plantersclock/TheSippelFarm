@@ -8,6 +8,6 @@ from django.contrib.admin import widgets
 import datetime
 
 class ContactUsForm(forms.Form):
-    name = forms.CharField(label='Your name', max_length=100)
+    name = forms.CharField(max_length=100)
     email = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea)
