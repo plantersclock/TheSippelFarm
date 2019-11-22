@@ -23,6 +23,7 @@ import uuid
 
 from events.models import Event
 from .models import Page, PageContent
+from .forms import ContactUsForm
 
 
 
@@ -52,6 +53,45 @@ def page(request, name):
     }
 
     return render(request, "home/page.html", context)
+
+def contact_us(request, ref):
+    # if this is a POST request we need to process the form data
+    if request.method == "POST":
+        # create a form instance and populate it with data from the request:
+        form = ContactUsForm(
+            request.POST
+        )
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            contact_us = form
+            try:
+                print(contact_us.email)
+                print (contact_us.name)
+                subject = '{} Message From {} Email {}'.format(ref, contact_us.name, contact_us.email)
+                message = contact_us.message
+                email_from = settings.EMAIL_HOST_USER
+                print(settings.EMAIL_HOST_USER)
+                recipient_list = ['mattman861@gmail.com',]
+                send_mail( subject, message, email_from, recipient_list )
+                return HttpResponseRedirect("/contact-us")
+            except:
+                context = {
+                    "error": "Something went wrong :(",
+                    "form": form,
+                }
+                return render(request, "home/contact-us.html", context)
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = ContactUsForm()
+
+    context = {
+        "form": form,
+    }
+    return render(request, "home/contact-us.html", context)
 
 
 
