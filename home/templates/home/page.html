@@ -8,30 +8,32 @@
     <div class="additional-margins">
         <div style="width: 100%">
 
-            <div class="event-header-image" style = "background-image: url('{{ page.photo.url }}');">
-                <img src="{{ page.photo.url }}" width="100%">
-            </div>
+          <div class="event-header-image" style = "background-image: url('{{ page.photo.url }}');">
+              <img src="{{ page.photo.url }}" width="100%">
+          </div>
 
-            <div>
-                <div style="margin-left:5%; margin-right:5%; padding-top: 20px;">
-                    <h3 class = "darkest-color title">{{page.content_title}}</h3>
-                    <p class="subtitle" style="margin-top: 10px;">{{ page.content_text|linebreaks }}</p>
-                </div>
-            </div>
+          <div>
+              <div style="margin-left:5%; margin-right:5%; padding-top: 20px;">
+                  <h3 class = "darkest-color title">{{page.content_title}}</h3>
+                  <p class="subtitle" style="margin-top: 10px;">{{ page.content_text|linebreaks }}</p>
+              </div>
+          </div>
 
-            {% for content in page_content %}
-            <div class="full-size-image" style="margin-left:5%; background-image: url('{{ content.photo.url }}');">
-                <img src="{{ content.photo.url }}" width="100%" style="border-radius: 5px;visibility:hidden">
+          {% for content in page_content %}
+          <div class= "horizontal-once-large-page">
+            <div class="full-size-image-page" style="margin-left:5%; margin-top: 20px; margin-bottom: 40px;">
+              <img src="{{ content.photo.url }}" width="100%" style="border-radius: 2px;"></img>
             </div>
-            <div style="padding-top: 20px;">
-                <div style="margin-left:5%; margin-right:5%;">
-                    <h3 class = "darkest-color title" >{{ content.content_title}} </h3>
-                    <p class = "background-color subtitle" style="margin-top: 10px;"> {{ content.content_text|linebreaks }}</p>
-                </div>
+            <div class = "width-once-large">
+              <div class = "page-text-margin" style="margin-left:5%; margin-right:5%;">
+                  <h3 class = "darkest-color title" >{{ content.content_title}} </h3>
+                  <p class = "background-color subtitle" style="margin-top: 10px;"> {{ content.content_text|linebreaks }}</p>
+              </div>
             </div>
-            <div style="margin-left: 5%; width: 90%; margin-right: 5%; margin-top:20px; margin-bottom: 20px;">
-            </div>
-            {% endfor %}
+          </div>
+          <div id= "page-divider" style="margin-left: 5%; width: 90%; margin-right: 5%; margin-bottom: 20px;">
+          </div>
+          {% endfor %}
 
         </div>
     </div>

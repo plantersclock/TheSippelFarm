@@ -161,7 +161,7 @@ GS_PROJECT_ID = '1045718034708'
 # DEBUG = True
 
 
-# Turn on for Prod!!!!!!!
+Turn on for Prod!!!!!!!
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
