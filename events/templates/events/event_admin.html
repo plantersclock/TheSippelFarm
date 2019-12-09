@@ -5,23 +5,11 @@
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
     <link rel="stylesheet" type="text/css" href="/static/home/home.css">
     <div class="additional-margins">
-        <div class="event-header-image" style= "padding-top: 75%;">
-        </div>
-        <div>
-            <div style="margin-left:5%; margin-right:5%; padding-top: 20px; padding-bottom:20px">
-                <h3 class = "title">Events</h3>
-                <p>TSF hosts many upper level clinicians and equine wellness practitioners throughout the year, as well as periodic schooling shows. The events are posted below for outside haul-ins to sign up. The following is a list of some of the professionals that visit TSF on a regular basis:<br>
-                    <br>
-                    &bull;  Ellie Rawle, USDF Gold Medalist <br>
-                    &bull;  Ashley Madison, USDF Gold Medalist<br>
-                    &bull;  Jessica Bortner-Harris, 3*** Eventer & PEMF Practitioner<br>
-                    &bull;  Mark Walker, Equine Rehab Specialist & Kinesiogist</p>
-            </div>
-        </div>
-        <div  style= "width: 100%;" >
+        <div style= "width: 100%; padding-top: 20px;" >
+        {% if user.is_authenticated %}
             <h3 class="darkest-color" style="font-family: 'Merriweather', serif; margin-left: 5%; margin-bottom: 20px;">TSF Events</h3>
-            {% for event in events.events %}
-            <div style="cursor: pointer;" onclick="location.href='/events/{{event.id}}/sign_up'" class="event-card-4-background">
+            {% for event in context.events %}
+            <div style="cursor: pointer;" onclick="location.href='/events/edit/{{event.id}}'" class="event-card-4-background">
                 <div class="flex-container">
                     <div class="horse noselect"><p style="font-family: 'Merriweather', serif; width: 80px; text-align: center; padding-top: 10%; color:#f2f8f7; font-size: 20px">{{event.start_date|date:"D"}}<br>{{event.start_date|date:"M"}}<br>{{event.start_date|date:"jS"}}</p></div>
                     <div class="event-details">
@@ -31,7 +19,15 @@
                     </div>
                 </div>
             </div>
+
             {% endfor %}
+                <div class="fixed-footer" onclick="location.href='/events/add'">
+                <button type="button" class="btn btn-success btn-circle btn-lg"><i class="fas fa-plus"></i></button>
+            </div>
+            {% else %}
+                <h3 style="margin-top: 40px; margin-bottom: 60px; display:flex; justify-content:center; color: red;">Admin's Only</h3>
+                <a href="/accounts/login"> Login </a> 
+            {% endif %}
         </div>
     </div>
 {% endblock %}

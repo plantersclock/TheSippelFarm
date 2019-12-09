@@ -26,7 +26,8 @@ from .models import (
 )
 from .forms import (
     EventSignUpForm,
-    AttendeeScheduleForm
+    AttendeeScheduleForm,
+    EventForm
 )
 
 from django.core.mail import send_mail
@@ -140,7 +141,8 @@ def attendee_schedule(request, pk):
 
     context = {
         "form": form,
-        "scheduled_attendees": ScheduledAttendee.objects.filter(attendee__event=pk).order_by('time')
+        "scheduled_attendees": ScheduledAttendee.objects.filter(attendee__event=pk).exclude(day=None).order_by('time'),
+        "event": get_object_or_404(Event, id=pk)
     }
     return render(request, "events/scheduler.html", context)
 
@@ -162,3 +164,60 @@ def attendee_defaults(request):
 
 
     return JsonResponse(data)
+
+
+class EventAdminView(generic.ListView):
+    model = Event
+    template_name = "events/event_admin.html"
+    context_object_name = "context"
+
+    def get_queryset(self):
+        context = {
+            "events": Event.objects.filter(end_date__gte = pendulum.now()-timedelta(days=60)).order_by('start_date'),
+        }
+        print(context)
+        return context
+
+def add_event(request):
+    # if this is a POST request we need to process the form data
+    if request.method == "POST":
+        # create a form instance and populate it with data from the request:
+        form = EventForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+
+            form.save()
+            return HttpResponseRedirect("/events/admin")
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = EventForm()
+
+    context = {
+        "title": "Add Event",
+        "form": form,
+    }
+    return render(request, "events/event_form.html", context)
+
+
+
+def edit_event(request, pk):
+    instance = get_object_or_404(Event, id=pk)
+    form = EventForm(request.POST or None, instance=instance)
+    if request.method == "POST":
+        if '_schedule' in request.POST:
+            return HttpResponseRedirect("/events/{}/scheduler".format(pk))
+        if '_submit' in request.POST:
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect("/events/admin")
+    context = {
+        "pk": pk,
+        "title": "Edit Event",
+        "form": form,
+    }
+    return render(request, "events/event_form.html", context)
+

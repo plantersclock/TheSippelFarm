@@ -5,6 +5,23 @@
     --card-color-4: #502929;
     }
 
+
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+    }
+
+.fixed-footer {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    }
+
 .event-header-image {
     position: relative;
     width: 100%;
@@ -66,7 +83,7 @@
         to right,
         var(--card-color-2),
         var(--card-color-2) 80px,
-        #var(--background-color) 80px,
+        var(--background-color) 80px,
         var(--background-color) 100%
     );
 }
@@ -96,8 +113,8 @@
     margin-bottom: 10px;
     height: auto;
 
-    border-radius: 5px;
-
+    border-radius: 3px;
+    border: 1px solid var(--secondary-base-color) ;
     background: linear-gradient(
         to right,
         var(--card-color-4),
@@ -122,11 +139,29 @@
     padding: 20px;
 }
 
+.form-margins {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@media only screen and (min-width: 475px) {
+    .form-margins {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+}
+
 @media (max-width: 600px) {
     #card-header {
       font-size:20px;
     }
-  }
+}
 
+@media only screen and (min-width: 850px) {
+    .form-margins {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
 
 
