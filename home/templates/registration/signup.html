@@ -7,11 +7,16 @@
 
   <h2 style = "padding-left:20%; padding-top:2rem;">Sign up</h2>
   <div style = "padding-left:20%; padding-right:20%;">
+  {% if user.is_authenticated %}
   <form method="post">
     {% bootstrap_form form %}
     {% csrf_token %}
     {{ form.media }}
     <button type="submit">Sign up</button>
   </form>
+  {% else %}
+      <h3 style="margin-top: 40px; margin-bottom: 60px; display:flex; justify-content:center; color: red;">Admin's Only</h3>
+      <a href="/accounts/login"> Login </a> 
+  {% endif %}
   </div>
 {% endblock %}
