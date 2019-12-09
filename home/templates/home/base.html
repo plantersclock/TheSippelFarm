@@ -10,35 +10,37 @@
 
 
   {% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top:23px; padding-bottom:23px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light padding" style="padding-top:23px; padding-bottom:23px; background-color: #F8F9FA;">
               {% load bootstrap4 %}
               {% bootstrap_css %}
               {% bootstrap_javascript jquery='full' %}
-      <img class="navbar-brand" src="https://i.imgur.com/vr0hSne.png" height="60px" style="margin:0; padding:0;"></img>
+
+      <img class="navbar-brand" src="https://i.imgur.com/vr0hSne.png" height="60px" style="margin-right: 0; padding:0;">
       <a class="navbar-brand heading-font" style="margin:0; padding:0; font-family: 'Merriweather', serif;" href="/">The Sippel Farm</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon "></span>
       </button>
 
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" style="margin-left: 0px;" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/events">Events</a>
+            <a class="nav-link" style="margin-left: 0px;" href="/events">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/for-sale">For Sale</a>
+            <a class="nav-link" style="margin-left: 0px;" href="/for-sale">For Sale</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/page/amenities">Amenities</a>
+            <a class="nav-link" style="margin-left: 0px;" href="/page/amenities">Amenities</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/page/about_us">About Us</a>
+            <a class="nav-link" style="margin-left: 0px;" href="/page/about_us">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact-us/contact-us/">Contact Us</a>
+            <a class="nav-link" style="margin-left: 0px;" href="/contact-us/contact-us/">Contact Us</a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -57,6 +59,7 @@
 
         </ul>
       </div>
+      
     </nav>
   {% endblock %}
 

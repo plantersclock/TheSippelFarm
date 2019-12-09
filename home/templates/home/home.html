@@ -6,7 +6,7 @@
     </div>
     <div style="width:100%;">
         <div style="text-align:center; margin-top: 40px; margin-bottom: 40px; padding-left: 10%; padding-right: 10%">
-            <h5 class="darkest-color" style="font-family: 'Merriweather', serif; margin-bottom: 0px; font-weight: 300;">The Sippel Farm is a private equine training facility located on 12 beautiful rolling acres in Annville, Pennsylvania</h5>
+            <h5 class="darkest-color flavor-text-once-large" style="font-family: 'Merriweather', serif; margin-bottom: 0px; font-weight: 300;">The Sippel Farm is a private equine training facility located on 12 beautiful rolling acres in Annville, Pennsylvania</h5>
         </div>
         <div style="border-top: solid 2px #e6e6e6; margin-left: 5%; margin-right: 5%;">
         </div>
@@ -21,29 +21,28 @@
             <div class="flex-container desktop-neg-margins">
                 <div class="gallery">
                     <div class="image"style = 'cursor: pointer; background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
-                                              url("/static/images/indoor.jpg");' onclick="location.href='/page/amenities'"><h4 class="text">Indoor Arena</h4></div>
+                                              url("/static/images/indoor.jpg");' onclick="location.href='/page/amenities#Indoor Arena'"><h4 class="text">Indoor Arena</h4></div>
                 </div>
                 <div style="width:3.5%"></div>
                 <div class="gallery">
                     <div class="image"style = 'cursor: pointer; background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
-                                              url("/static/images/outdoor.jpg");' onclick="location.href='/page/amenities'"><h4 class="text">Dressage Arena</h4></div>
+                                              url("/static/images/outdoor.jpg");' onclick="location.href='/page/amenities#Outdoor full-size dressage court'"><h4 class="text">Dressage Arena</h4></div>
                 </div>
             </div>
             <div class="flex-container desktop-margins" >
                 <div class="gallery" style="margin-top: 12px;">
                     <div class="image"style = 'cursor: pointer; background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
-                                              url("/static/images/horse_jumping.png");' onclick="location.href='/page/amenities'"><h4 class="text">Jump Field</h4></div>
+                                              url("/static/images/horse_jumping.png");' onclick="location.href='/page/amenities#XC Jump Field'"><h4 class="text">Jump Field</h4></div>
                 </div>
                 <div style="width:3.5%"></div>
                 <div class="gallery" style="margin-top: 12px;">
                     <div class="image"style = 'cursor: pointer; background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
-                                              url("/static/images/jump2.jpg");' onclick="location.href='/page/amenities'"><h4 class="text">Jump Ring</h4></div>
+                                              url("/static/images/jump2.jpg");' onclick="location.href='/page/amenities#Outdoor Jump Ring'"><h4 class="text">Jump Ring</h4></div>
                 </div>
             </div>
           </div>
         </div>
-        <div style="border-top: solid 2px #e6e6e6; margin-left: 5%; margin-right: 5%; margin-top: 40px;">
-        </div>
+        <div id="divider-line"></div>
         <div style="margin-left:5%; margin-right:5%; margin-top: 20px;">
             <h3 class="title">Events</h3>
             <p class="subtitle">Hosting upper level clinicians and equine wellness practicioners, as well as schooling shows throughout the year.</p>
@@ -60,7 +59,7 @@
             {% endfor %}
         </div>
         <div id="show-more-button" style="margin-top: 20px; padding:10px; cursor: pointer;" onclick="location.href='/events'">
-            <p class = "noselect main-accent-color" style="margin:0; text-align:center; font-weight:500;">Show all Events</p>
+            <p class = "noselect main-accent-color text-once-large" style="margin:0; text-align:center; font-weight:500;">Show all Events</p>
         </div>
         <div id="divider-line"></div>
         <div class="horizontal-once-large">
@@ -68,11 +67,11 @@
             <h3 class="title">For Sale</h3>
             <p class="subtitle large-for-sale-content">Horses, tack and merchandise for sale now</p>
           </div>
-          <div class="full-size-image" style="margin-left:5%; margin-top: 20px; margin-bottom: 40px;">
-            <img src="/static/images/tack_room.jpg" width="100%" style="border-radius: 5px; visibility: hidden;"></img>
+          <div class="full-size-image for-sale-image-margin">
+            <img src="/static/images/tack_room.jpg" width="100%" style="border-radius: 5px; visibility: hidden; ">
             <div class = "text" style="width:70%;">
                 <div id="show-more-button" style="padding-top:10px; padding-bottom: 10px; border-color: white; background-color: white; margin-top: 33%; cursor: pointer;" onclick="location.href='/for-sale'">
-                    <p class = "noselect subtitle for-sale-text" style="margin:0; text-align:center;">See What's For Sale</p>
+                    <p class = "noselect subtitle text-once-large" style="margin:0; text-align:center;">See What's For Sale</p>
                 </div>
             </div>
           </div>

@@ -26,13 +26,16 @@
             </div>
             <div class = "width-once-large">
               <div class = "page-text-margin" style="margin-left:5%; margin-right:5%;">
+                  <a name = "{{ content.content_title}}"></a>
                   <h3 class = "darkest-color title" >{{ content.content_title}} </h3>
                   <p class = "background-color subtitle" style="margin-top: 10px;"> {{ content.content_text|linebreaks }}</p>
               </div>
             </div>
           </div>
-          <div id= "page-divider" style="margin-left: 5%; width: 90%; margin-right: 5%; margin-bottom: 20px;">
+          {% if not forloop.last %}
+          <div id= "page-divider">
           </div>
+          {% endif %}
           {% endfor %}
 
         </div>

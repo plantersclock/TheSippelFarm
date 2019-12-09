@@ -7,7 +7,6 @@
     --secondary-accent-color: #fdc2c8;
     }
 
-
 .darkest-color {
     color: var(--darkest-color);
 }
@@ -225,7 +224,7 @@
 }
 
 .navbar.navbar-light .heading-font {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .for-sale-pic{
@@ -239,21 +238,32 @@
     margin-right:5%;
 }
 
-.for-sale-text {
+.text-once-large {
     font-size:14px;
 }
 
 .page-text-margin{
     margin-top: -20px;
 }
-@media only screen and (min-width: 350px) {
+
+.for-sale-image-margin {
+    margin-left:5%; 
+    margin-top: 20px; 
+    margin-bottom: 40px;
+}
+
+.last :last-of-type {
+    display: None;
+}
+
+@media only screen and (min-width: 361px) {
     .navbar.navbar-light .heading-font {
         font-size: 25px;
     }
 }
 
 @media only screen and (min-width: 475px) {
-    .for-sale-text {
+    .text-once-large {
         font-size:16px;
     }
 
@@ -261,6 +271,16 @@
         margin-left: 7%;
         margin-right: 7%;
     }
+
+    .navbar.navbar-light {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+      }
+
+    .nav-links-margin {
+        margin-right: 10%;
+    }
+
     .header-image {
         width: 100%;
         padding-top: 58%;
@@ -281,6 +301,24 @@
         margin-left: 10%;
         margin-right: 10%;
     }
+
+    .navbar.navbar-light {
+        padding-left: 8% !important;
+        padding-right: 8% !important;
+      }
+
+    .nav-links-margin {
+        margin-right: 12%;
+    }
+
+    #divider-line {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-top: solid 2px #e6e6e6;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
     .header-image {
         width: 100%;
         padding-top: 58%;
@@ -313,6 +351,14 @@
     }
 }
 
+@media only screen and (min-width: 990px) {
+
+    .navbar.navbar-light {
+        padding-left: 9% !important;
+        padding-right: 9% !important;
+      }
+    }
+
 @media only screen and (min-width: 1500px) {
     #divider-line {
         margin-top: 40px;
@@ -321,17 +367,48 @@
         margin-left: 5%;
         margin-right: 5%;
     }
+    .text-once-large {
+        font-size:20px;
+    }
+    .flavor-text-once-large{
+        font-size: 26px;
+    }
+    .title{
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+    .gallery .date {
+        font-size:18px; 
+    }
+    .gallery .title {
+        font-size:22px;
+    }
+    .gallery .info {
+        font-size: 20px;
+    }
+    .gallery .image .text {
+        font-size: 22px;
+    }
     .page-text-margin {
         margin-top: 20px;
     }
     #page-divider {
         border-top: solid 2px #e6e6e6;
+        margin-left: 5%;
+        width: 90%;
+        margin-right: 5%; 
+        margin-bottom: 20px;
     }
     .horizontal-once-large {
         display:flex;
-        flex-direction: row-reverse;
+        justify-content: center;
     }
-
+    .for-sale-image-margin { 
+        margin-left: 0%;
+    }
     .horizontal-once-large-page {
         display:flex;
         flex-direction: row;
@@ -342,20 +419,15 @@
     }
 
     .horizontal-once-large .full-size-image {
-        width: 45%;
+        width: 55%;
     }
     .width-once-large {
         width: 45%;
     }
     .half-once-large{
-        width: 45%;
-        margin-left:5%;
-        margin-right:0%;
+        display: none;
     }
-    .additional-margins {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
+
     .header-image {
         width: 100%;
         padding-top: 58%;
