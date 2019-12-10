@@ -172,10 +172,19 @@ class EventAdminView(generic.ListView):
     context_object_name = "context"
 
     def get_queryset(self):
+        events = Event.objects.filter(end_date__gte = pendulum.now()-timedelta(days=60)).order_by('start_date')
+        event_list = []
+        for event in events:
+            event_with_counts = {"event": event,
+                                "joined": EventJoined.objects.filter(event=event).count(),
+                                "scheduled": ScheduledAttendee.objects.filter(attendee__event=event).count()
+            }
+            print(event_with_counts)
+            event_list.append(event_with_counts)
+        print(event_list)
         context = {
-            "events": Event.objects.filter(end_date__gte = pendulum.now()-timedelta(days=60)).order_by('start_date'),
+            "events": event_list,
         }
-        print(context)
         return context
 
 def add_event(request):

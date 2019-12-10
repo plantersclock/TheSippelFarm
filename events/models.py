@@ -13,6 +13,12 @@ payment_method = [
     ("Paypal", "Paypal"),
 ]
 
+event_type = [
+    ("Clinic", "Clinic"),
+    ("Show", "Show"),
+    ("Therapy", "Therapy"),
+    ("Other", "Other"),
+]
 # Create your models here.
 
 class Professional(models.Model):
@@ -24,6 +30,7 @@ class Professional(models.Model):
         return "{}".format(self.name)
 
 class Event(models.Model):
+    event_type = models.CharField(max_length=200, choices=event_type)
     name = models.CharField(max_length=128)
     professional = models.ForeignKey(Professional, on_delete=models.CASCADE)
     start_date = models.DateTimeField('Event Start Date')
