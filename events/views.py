@@ -179,9 +179,7 @@ class EventAdminView(generic.ListView):
                                 "joined": EventJoined.objects.filter(event=event).count(),
                                 "scheduled": ScheduledAttendee.objects.filter(attendee__event=event).count()
             }
-            print(event_with_counts)
             event_list.append(event_with_counts)
-        print(event_list)
         context = {
             "events": event_list,
         }
