@@ -8,7 +8,8 @@ from django.contrib.admin import widgets
 import datetime
 from .models import (
     EventJoined,
-    ScheduledAttendee
+    ScheduledAttendee,
+    Event
 )
 
 class EventSignUpForm(forms.ModelForm):
@@ -31,3 +32,13 @@ class AttendeeScheduleForm(forms.ModelForm):
                     "time": TimePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"}),
                     "duration": forms.NumberInput(attrs={"class":"form-control"})
                 }
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ["event_type", "name", "professional", "start_date", "end_date", "details", "published"]
+        widgets = {
+            "event_type": forms.Select(attrs={"class":"form-control"}),
+            "start_date": DateTimePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"}),
+            "end_date": DateTimePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"})
+        }

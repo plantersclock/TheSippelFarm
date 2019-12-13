@@ -21,6 +21,7 @@
 
           {% for content in page_content %}
           <div class= "horizontal-once-large-page">
+            <a name = "{{ content.content_title}}"></a>
             <div class="full-size-image-page" style="margin-left:5%; margin-top: 20px; margin-bottom: 40px;">
               <img src="{{ content.photo.url }}" width="100%" style="border-radius: 2px;"></img>
             </div>
@@ -31,8 +32,10 @@
               </div>
             </div>
           </div>
-          <div id= "page-divider" style="margin-left: 5%; width: 90%; margin-right: 5%; margin-bottom: 20px;">
+          {% if not forloop.last %}
+          <div id= "page-divider">
           </div>
+          {% endif %}
           {% endfor %}
 
         </div>

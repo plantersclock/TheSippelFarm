@@ -5,21 +5,21 @@
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
 
     {% comment %} {% if user.is_authenticated %} {% endcomment %}
-
+    <h3 class="darkest-color" style="font-family: 'Merriweather', serif; margin-left: 5%; margin-top: 20px; margin-bottom: 20px;">{{event.name}}</h3>
     <form method="post" >
 
         {{ form.media }}
         {% csrf_token %}
         <div style="width: 90%; margin-left: 5%; margin-right: 5%;">
 
-        <p class="subtitle"> Attendee </p>
+        <p class="subtitle" style = "margin-bottom: 10px;">Attendee </p>
         {{ form.attendee}}
         <div name= "sched_note" id="sched_note" style = "margin-top: 10px;"></div>
-        <p class="subtitle"> Date </p>
+        <p class="subtitle" style = "margin-top: 10px;"> Date </p>
         <div style = "margin-top: 10px;">{{ form.day|default_if_none:"" }}</div>
-        <p class="subtitle"> Start Time </p>
+        <p class="subtitle" style = "margin-top: 10px;"> Start Time </p>
         <div style = "margin-top: 10px;">{{ form.time|default_if_none:"" }}</div>
-        <p class="subtitle"> Duration </p>
+        <p class="subtitle" style = "margin-top: 10px;"> Duration </p>
         <div style = "margin-top: 10px;">{{ form.duration|default_if_none:""}}</div>
 
         <div style="margin-top:10px;">
