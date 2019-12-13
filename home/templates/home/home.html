@@ -54,7 +54,7 @@
                 <div class="event-images" onclick="location.href='/events/{{event.id}}/sign_up'" style = 'cursor: pointer; background-image: url("/static/images/training.jpg"); '></div>
                 <h5 class="date">{{ event.start_date|date:"F jS"|upper }}</h5>
                 <h3 class="title">{{ event.name|title }}</h3>
-                <h5 class="info" style="margin-bottom:20px;">Host: {{event.professional}}</h5>
+                <h5 class="info" style="margin-bottom:20px;">Clinician: {{event.professional}}</h5>
             </div>
             <div style="margin-left: 3.5%;"></div>
             {% endfor %}
