@@ -6,12 +6,12 @@
     </div>
     <div style="width:100%;">
         <div style="text-align:center; margin-top: 40px; margin-bottom: 40px; padding-left: 10%; padding-right: 10%">
-            <h5 class="darkest-color flavor-text-once-large" style="font-family: 'Merriweather', serif; margin-bottom: 0px; font-weight: 300;">The Sippel Farm is a private equine training facility located on 12 beautiful rolling acres in Annville, Pennsylvania</h5>
+            <h5 class="darkest-color flavor-text-once-large flavor-extra-margin" style="font-family: 'Merriweather', serif; margin-bottom: 0px; font-weight: 300;">The Sippel Farm is a private equine training facility located on 12 beautiful rolling acres in Annville, Pennsylvania</h5>
         </div>
         <div style="border-top: solid 2px #e6e6e6; margin-left: 5%; margin-right: 5%;">
         </div>
         <div style="margin-top: 20px; margin-bottom: 20px;">
-          <div style="margin-left:5%; margin-right:5%;">
+          <div style="margin-left:5%; margin-right:5%;" class="header-left-margin">
               <h3 class = "title">Amenities</h3>
               <p class = "subtitle">12 stall barn with foaling/layup stall and numerous riding areas.</p>
           </div>
@@ -29,6 +29,7 @@
                                               url("/static/images/outdoor.jpg");' onclick="location.href='/page/amenities#Outdoor full-size dressage court'"><h4 class="text">Dressage Arena</h4></div>
                 </div>
             </div>
+            <div class="extra-divider"></div>
             <div class="flex-container desktop-margins" >
                 <div class="gallery" style="margin-top: 12px;">
                     <div class="image"style = 'cursor: pointer; background-image: linear-gradient(to bottom, transparent, transparent 80%, rgba(0, 0, 0, 0.70)),
@@ -43,11 +44,11 @@
           </div>
         </div>
         <div id="divider-line"></div>
-        <div style="margin-left:5%; margin-right:5%; margin-top: 20px;">
+        <div style="margin-left:5%; margin-right:5%; margin-top: 20px;" class="header-left-margin">
             <h3 class="title">Events</h3>
             <p class="subtitle">Hosting upper level clinicians and equine wellness practicioners, as well as schooling shows throughout the year.</p>
         </div>
-        <div class="flex-container" style="overflow-x: auto; margin-left: 5%; margin-right: 5%;">
+        <div class="flex-container gallery-flex">
             {% for event in context.events %}
             <div class="gallery gallery2">
                 <div class="event-images" onclick="location.href='/events/{{event.id}}/sign_up'" style = 'cursor: pointer; background-image: url("/static/images/training.jpg"); '></div>
