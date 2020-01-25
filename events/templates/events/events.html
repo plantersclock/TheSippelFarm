@@ -5,12 +5,12 @@
     <link rel="stylesheet" type="text/css" href="/static/events/event.css">
     <link rel="stylesheet" type="text/css" href="/static/home/home.css">
     <div class="additional-margins">
-        <div class="event-header-image" style= "padding-top: 75%;">
+        <div class="event-header-image">
         </div>
         <div>
             <div style="margin-left:5%; margin-right:5%; padding-top: 20px; padding-bottom:20px">
                 <h3 class = "title">Events</h3>
-                <p>TSF hosts many upper level clinicians and equine wellness practitioners throughout the year, as well as periodic schooling shows. The events are posted below for outside haul-ins to sign up. The following is a list of some of the professionals that visit TSF on a regular basis:<br>
+                <p style="margin-top: 10px;">TSF hosts many upper level clinicians and equine wellness practitioners throughout the year, as well as periodic schooling shows. The events are posted below for outside haul-ins to sign up. The following is a list of some of the professionals that visit TSF on a regular basis:<br>
                     <br>
                     &bull;  Ellie Rawle, USDF Gold Medalist <br>
                     &bull;  Ashley Madison, USDF Gold Medalist<br>
@@ -18,8 +18,8 @@
                     &bull;  Mark Walker, Equine Rehab Specialist & Kinesiogist</p>
             </div>
         </div>
-        <div  style= "width: 100%;" >
-            <h3 class="darkest-color" style="font-family: 'Merriweather', serif; margin-left: 5%; margin-bottom: 20px;">TSF Events</h3>
+        <div  style= "width: 100%; margin-bottom: 40px;" >
+            <h3 class="darkest-color title" style="font-family: 'Merriweather', serif; margin-left: 5%; margin-bottom: 20px;">Upcoming Events</h3>
             {% for event in events.events %}
             <div style="cursor: pointer;" onclick="location.href='/events/{{event.id}}/sign_up'" class="event-card-4-background">
                 <div class="flex-container">

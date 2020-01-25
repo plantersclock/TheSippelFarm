@@ -33,11 +33,16 @@ class Event(models.Model):
     event_type = models.CharField(max_length=200, choices=event_type)
     name = models.CharField(max_length=128)
     professional = models.ForeignKey(Professional, on_delete=models.CASCADE)
+    cost = models.IntegerField()
     start_date = models.DateTimeField('Event Start Date')
     end_date = models.DateTimeField('Event End Date')
     details =  models.TextField('Event Details')
+    signup_start_date = models.DateField('Sign-up Start Date', null=True, default=None, blank=True)
+    signup_end_date = models.DateField('Sign-up End Date', null=True, default=None, blank=True)
+
     photo = models.CharField(max_length=1000, null=True, default=None, blank=True)
     published = models.BooleanField()
+    schedule_published = models.BooleanField()
 
     def __str__(self):
         return "{}: {}-{}".format(self.name, self.start_date, self.end_date)
@@ -60,7 +65,7 @@ class ScheduledAttendee(models.Model):
     attendee = models.OneToOneField(EventJoined, on_delete=models.CASCADE)
     day = models.DateField('Scheduled Day', null=True, default=None, blank=True)
     time = models.TimeField('Scheduled Time', null=True, default=None, blank=True)
-    duration = models.IntegerField ('Duration', null=True, default=None, blank=True)
+    duration = models.IntegerField ('Duration in minutes', null=True, default=None, blank=True)
 
     def __str__(self):
         return "{}: {}-{}".format(self.attendee.rider, self.day, self.time)

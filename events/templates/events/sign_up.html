@@ -1,4 +1,4 @@
-{% extends "home/base.html" %}
+{% extends "events/base.html" %}
 
 {% block content %}
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -6,23 +6,43 @@
 
 
 
-    <div style="margin: 5%; margin-top: 10px; margin-bottom: 10px;">
-    
-    <h3 class="title">{{event.name}}</h3>
-    <p class="subtitle">Clinician: {{event.professional.name}}</p>
+    <div class="event-signup-details">
+
+    <h2 class="title" style="margin-bottom: 10px;">{{event.name}}</h2>
+    <p> <span class="slightly-bold">Dates:</span> {{event.start_date|date}} - {{event.end_date|date}}<br>
+    <span class="slightly-bold">Cost:</span> ${{event.cost}}<br>
+    <span class="slightly-bold">Clinician:</span> <a href={{event.professional.website}}>{{event.professional.name}}</a></p>
+    <p>{{event.details|linebreaks}} </p>
     <p style="color:red;">{{error}}</p>
+
+    {% if event.schedule_published %}
+    <div style="margin:40px 0">
+    <h3 class="title" style="margin-bottom: 10px;">Schedule</h3>
+        {% for attendee in scheduled_attendees%}
+            <p> <span class="slightly-bold">{{attendee.day}} @ {{attendee.time}}</span> {{attendee.attendee.rider}} - {{attendee.attendee.horse}}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    </div>
     {% load bootstrap4 %}
     {% bootstrap_css %}
-    {% bootstrap_javascript jquery='full' %}
-    <form method="post">
+    <div class="event-signup-form">
+        {% if disp_signup %}
+        <h3 class="title" style="margin-bottom: 10px;">Sign-up</h3>
+        <p> Registration closes: {{event.signup_end_date|date}} </p>
+        <form method="post">
 
-        {{ form.media }}
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <button type="submit" class="btn btn-success" onclick="this.disabled=true,this.form.submit();">Sign-Up</button>
+            {{ form.media }}
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success" onclick="this.disabled=true,this.form.submit();">Sign-Up</button>
 
-    </form>
-
+        </form>
+        {% else %}
+        <p style="margin: 0;"> Sign-ups are currently closed </p>
+        {% endif %}
     </div>
 {% endblock %}
 

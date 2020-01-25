@@ -13,7 +13,6 @@ import csv
 
 import cx_Oracle
 import json
-import datetime
 import pytz
 import pendulum
 import uuid
@@ -98,9 +97,9 @@ def event_sign_up(request, pk):
                 return HttpResponseRedirect("/events")
             except:
                 context = {
-                    "error": "This rider and horse are already signed up for this event",
+                    "error": "This Rider and Horse are already signed up for this event",
                     "event": event,
-                    "form": form,
+                    "form": form
                 }
                 return render(request, "events/sign_up.html", context)
 
@@ -108,9 +107,21 @@ def event_sign_up(request, pk):
     else:
         form = EventSignUpForm()
 
+    scheduled_attendees = ScheduledAttendee.objects.filter(attendee__event = pk).order_by('time').order_by('day')
+
+    try:
+        if event.signup_end_date > date.today() > event.signup_start_date:
+            print ("Disp signup")
+            disp_signup = True
+        else:
+            disp_signup = False
+    except:
+        disp_signup = False
     context = {
         "event": event,
         "form": form,
+        "disp_signup": disp_signup,
+        "scheduled_attendees": list(scheduled_attendees)
     }
     return render(request, "events/sign_up.html", context)
 

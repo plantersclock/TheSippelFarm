@@ -36,9 +36,11 @@ class AttendeeScheduleForm(forms.ModelForm):
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ["event_type", "name", "professional", "start_date", "end_date", "details", "published"]
+        fields = ["event_type", "name", "professional", "start_date", "end_date", "signup_start_date", "signup_end_date", "details", "cost", "published", "schedule_published"]
         widgets = {
             "event_type": forms.Select(attrs={"class":"form-control"}),
             "start_date": DateTimePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"}),
-            "end_date": DateTimePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"})
+            "end_date": DateTimePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"}),
+            "signup_start_date": DatePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"}),
+            "signup_end_date": DatePickerInput(options= {"ignoreReadonly":True}, attrs={"readonly":"readonly", "style":"background-color:white; border: 1px solid #ced4da;"})
         }
